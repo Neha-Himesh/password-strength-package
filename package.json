@@ -1,0 +1,17 @@
+{
+  "name": "password_strength_package",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Neha Himesh (nehahimesh.10@gmail.com)",
+  "bin": {
+    "password-strength": "./bin/password_strength.js"
+  },
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "commander": "^12.1.0"
+  }
+}
