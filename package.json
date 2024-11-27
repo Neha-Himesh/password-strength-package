@@ -1,5 +1,5 @@
 {
-  "name": "password_strength_package",
+  "name": "password-strength-package",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -7,7 +7,7 @@
   },
   "author": "Neha Himesh (nehahimesh.10@gmail.com)",
   "bin": {
-    "password-strength": "./bin/password_strength.js"
+    "password_strength": "./bin/password_strength.js"
   },
   "license": "ISC",
   "description": "",
