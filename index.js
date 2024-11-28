@@ -4,23 +4,20 @@ function checkStrength(password){
         strength: "",
         suggestions: [],
     }
-    var count = 0;
     var totalIfCases = 0;
     var passwordStrengthCount = 0;
     if ((/^.{8,}$/).test(password)){
         passwordStrengthCount ++;
         totalIfCases ++;
     } else {
-        passwordReview.suggestions[count] = "Password should contain minimum of 8 characters";
-        count ++;
+        passwordReview.suggestions.push("Password should contain minimum of 8 characters");
         totalIfCases ++;
     }
     if ((/(?=.*[A-Z])/).test(password)){
         passwordStrengthCount ++;
         totalIfCases ++;
     } else {
-        passwordReview.suggestions[count] = "Password should contain atleast 1 capital letter";
-        count ++;
+        passwordReview.suggestions.push("Password should contain atleast 1 capital letter");
         totalIfCases ++;
     }
     //if ((/(?=.*[a-z])/).test(password)){
@@ -28,16 +25,14 @@ function checkStrength(password){
         passwordStrengthCount ++;
         totalIfCases ++;
     } else {
-        passwordReview.suggestions[count] = "Password should contain atleast 1 small letter";
-        count ++;
+        passwordReview.suggestions.push("Password should contain atleast 1 small letter");
         totalIfCases ++;
     }
     if ((/(?=.*\d)/).test(password)){
         passwordStrengthCount ++;
         totalIfCases ++;
     } else {
-        passwordReview.suggestions[count] = "Password should contain atleast 1 digit";
-        count ++;
+        passwordReview.suggestions.push("Password should contain atleast 1 digit");
         totalIfCases ++;
     }
     //if ((/(?=.*[!@#$%^&*(){}\[\]<>,.?/`~\-+=_])/).test(password)){
@@ -45,8 +40,7 @@ function checkStrength(password){
         passwordStrengthCount ++;
         totalIfCases ++;
     } else {
-        passwordReview.suggestions[count] = "Password should contain atleast 1 special character";
-        count ++;
+        passwordReview.suggestions.push("Password should contain atleast 1 special character");
         totalIfCases ++;
     }
     if (passwordStrengthCount >= 0 && passwordStrengthCount <= Math.floor(totalIfCases/2)){
