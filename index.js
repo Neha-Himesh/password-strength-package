@@ -32,15 +32,16 @@ function checkStrength(password){
         count ++;
         totalIfCases ++;
     }
-    if ((/.*\d/).test(password)){
+    if ((/(?=.*\d)/).test(password)){
         passwordStrengthCount ++;
         totalIfCases ++;
     } else {
         passwordReview.suggestions[count] = "Password should contain atleast 1 digit";
+        count ++;
         totalIfCases ++;
     }
     //if ((/(?=.*[!@#$%^&*(){}\[\]<>,.?/`~\-+=_])/).test(password)){
-    if ((/(?= .*\W)/).test(password)){
+    if ((/(?=.*[\W]|_)/).test(password)){
         passwordStrengthCount ++;
         totalIfCases ++;
     } else {
@@ -48,7 +49,6 @@ function checkStrength(password){
         count ++;
         totalIfCases ++;
     }
-    console.log(totalIfCases);
     if (passwordStrengthCount >= 0 && passwordStrengthCount <= Math.floor(totalIfCases/2)){
         passwordReview.strength = "Weak";
     } else if (passwordStrengthCount > Math.floor(totalIfCases/2) && passwordStrengthCount < totalIfCases ){

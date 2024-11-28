@@ -3,15 +3,19 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Neha Himesh (nehahimesh.10@gmail.com)",
   "bin": {
-    "password_strength": "./bin/password_strength.js"
+    "password_strength": "./password_strength.js"
   },
   "license": "ISC",
   "description": "",
   "dependencies": {
     "commander": "^12.1.0"
+  },
+  
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
