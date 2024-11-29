@@ -1,4 +1,4 @@
-const checkStrength = require('./index');
+const checkStrength = require('../index');
 
 describe('checkStrength Function', () => {
     test('should classify a strong password', () => {
