@@ -48,27 +48,31 @@ json
 
 #### Parameters: ####
 
-password (string):
+##### password (string): ##### 
 The password to evaluate.
 
 #### Returns: ####
 
 An object containing:
 
-booleanValue (boolean):Whether the password meets all criteria.
+##### booleanValue (boolean): ##### 
+Whether the password meets all criteria.
 true - Password meets all criteria
 false - Password does not meet one or more criteria
 
-strength (number):Password strength level:
+##### strength (number): ##### 
+
+Password strength level:
 0 - Weak
 1 - Moderate
 2 - Strong
 
-suggestions (array):Suggestions for improving the password.
+##### suggestions (array): ##### 
+Suggestions for improving the password.
 
 #### Dependencies: ####
 
-password_suggestions:
+##### password_suggestions: #####
 An external module that provides suggestions for password improvements. Ensure the module exports properties like:
 
 lengthCheck
