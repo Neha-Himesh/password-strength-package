@@ -1,5 +1,5 @@
 {
-  "name": "password-strength-calculator",
+  "name": "password-strength-package",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
