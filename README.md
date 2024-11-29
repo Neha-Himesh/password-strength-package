@@ -62,7 +62,7 @@ false - Password does not meet one or more criteria
 
 ##### strength (number): ##### 
 
-Password strength level:
+Password strength level:  
 0 - Weak  
 1 - Moderate  
 2 - Strong  
