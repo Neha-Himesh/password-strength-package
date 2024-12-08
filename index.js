@@ -7,6 +7,7 @@ function checkStrength(password, language, caseSensitive, minLength, maxLength){
     var totalIfCases = 0;
     var passwordStrengthCount = 0;
     const regex = new RegExp(`^.{${minLength},${maxLength}}$`);
+    const regexSplCharacters = /[\s\p{P}\p{S}\p{So}]/gu;
     if ((regex).test(password)){
         passwordStrengthCount ++;
         totalIfCases ++;
@@ -15,6 +16,7 @@ function checkStrength(password, language, caseSensitive, minLength, maxLength){
         totalIfCases ++;
     }
     if (caseSensitive === true){
+        // Matches uppercase letters
         if ((/\p{Lu}/u).test(password)){
             passwordStrengthCount ++;
             totalIfCases ++;
@@ -22,7 +24,7 @@ function checkStrength(password, language, caseSensitive, minLength, maxLength){
             passwordReview.suggestions.push("Password should contain atleast 1 capital letter");
             totalIfCases ++;
         }
-        //if ((/(?=.*[a-z])/).test(password)){
+        // Matches lowercase letters
         if ((/\p{Ll}/u).test(password)){
             passwordStrengthCount ++;
             totalIfCases ++;
@@ -47,12 +49,12 @@ function checkStrength(password, language, caseSensitive, minLength, maxLength){
         passwordReview.suggestions.push("Password should contain atleast 1 digit");
         totalIfCases ++;
     }
-    //if ((/(?=.*[!@#$%^&*(){}\[\]<>,.?/`~\-+=_])/).test(password)){
-    if ((/[\p{P}\p{S}\{So}]/u).test(password)){
+    // Matches spaces, punctuation, symbols, or emojis
+    if (regexSplCharacters.test(password)){
         passwordStrengthCount ++;
         totalIfCases ++;
     } else {
-        passwordReview.suggestions.push("Password should contain atleast 1 special character or an emoji");
+        passwordReview.suggestions.push("Password should contain atleast 1 special character, space or an emoji");
         totalIfCases ++;
     }
     
