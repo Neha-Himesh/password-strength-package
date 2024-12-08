@@ -6,7 +6,8 @@ function checkStrength(password, language, caseSensitive, minLength, maxLength){
     }
     var totalIfCases = 0;
     var passwordStrengthCount = 0;
-    if ((/^.{${minLength}, ${maxLength}}$/).test(password)){
+    const regex = new RegExp(`^.{${minLength},${maxLength}}$`);
+    if ((regex).test(password)){
         passwordStrengthCount ++;
         totalIfCases ++;
     } else {
