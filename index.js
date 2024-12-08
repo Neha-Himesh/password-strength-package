@@ -1,4 +1,4 @@
-function checkStrength(password){
+function checkStrength(password, language, caseSensitive, minLength, maxLength){
    
     var passwordReview = {
         strength: "",
@@ -6,29 +6,40 @@ function checkStrength(password){
     }
     var totalIfCases = 0;
     var passwordStrengthCount = 0;
-    if ((/^.{8,}$/).test(password)){
+    if ((/^.{${minLength}, ${maxLength}}$/).test(password)){
         passwordStrengthCount ++;
         totalIfCases ++;
     } else {
-        passwordReview.suggestions.push("Password should contain minimum of 8 characters");
+        passwordReview.suggestions.push(`Password should contain minimum of ${minLength} characters and maximum of ${maxLength} characters`);
         totalIfCases ++;
     }
-    if ((/(?=.*[A-Z])/).test(password)){
-        passwordStrengthCount ++;
-        totalIfCases ++;
+    if (caseSensitive === true){
+        if ((/\p{Lu}/u).test(password)){
+            passwordStrengthCount ++;
+            totalIfCases ++;
+        } else {
+            passwordReview.suggestions.push("Password should contain atleast 1 capital letter");
+            totalIfCases ++;
+        }
+        //if ((/(?=.*[a-z])/).test(password)){
+        if ((/\p{Ll}/u).test(password)){
+            passwordStrengthCount ++;
+            totalIfCases ++;
+        } else {
+            passwordReview.suggestions.push("Password should contain atleast 1 small letter");
+            totalIfCases ++;
+        }
     } else {
-        passwordReview.suggestions.push("Password should contain atleast 1 capital letter");
-        totalIfCases ++;
+        if ((/\p{L}/u).test(password)){
+            passwordStrengthCount ++;
+            totalIfCases ++;
+        } else {
+            passwordReview.suggestions.push("Password should contain atleast 1 letter");
+            totalIfCases ++;
+        }               
     }
-    //if ((/(?=.*[a-z])/).test(password)){
-    if ((/[a-z]/).test(password)){
-        passwordStrengthCount ++;
-        totalIfCases ++;
-    } else {
-        passwordReview.suggestions.push("Password should contain atleast 1 small letter");
-        totalIfCases ++;
-    }
-    if ((/(?=.*\d)/).test(password)){
+    
+    if ((/\p{N}/u).test(password)){
         passwordStrengthCount ++;
         totalIfCases ++;
     } else {
@@ -36,13 +47,14 @@ function checkStrength(password){
         totalIfCases ++;
     }
     //if ((/(?=.*[!@#$%^&*(){}\[\]<>,.?/`~\-+=_])/).test(password)){
-    if ((/(?=.*[\W]|_)/).test(password)){
+    if ((/[\p{P}\p{S}\{So}]/u).test(password)){
         passwordStrengthCount ++;
         totalIfCases ++;
     } else {
-        passwordReview.suggestions.push("Password should contain atleast 1 special character");
+        passwordReview.suggestions.push("Password should contain atleast 1 special character or an emoji");
         totalIfCases ++;
     }
+    
     if (passwordStrengthCount >= 0 && passwordStrengthCount <= Math.floor(totalIfCases/2)){
         passwordReview.strength = "Weak";
     } else if (passwordStrengthCount > Math.floor(totalIfCases/2) && passwordStrengthCount < totalIfCases ){
