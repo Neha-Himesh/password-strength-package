@@ -33,6 +33,7 @@
             <option value="true">True</option>
             <option value="false">False</option>
         </select>
+        <button type="submit">Check Strength</button>
     </form>
 
     <p id="strength"></p>
@@ -108,9 +109,10 @@
         }
 
         function updateStrength() {
+            event.preventDefault(); // Prevent form from reloading the page
             var password = document.getElementById("password").value;
             var passwordLanguage = document.getElementById("password-language").value;
-            var languageCaseSensitivity = document.getElementById("case-sensitive-input").value;
+            var languageCaseSensitivity = document.getElementById("case-sensitive-input").value === "true";
             var strengthInfo = checkStrength(password, passwordLanguage, languageCaseSensitivity, 8, 15);
             var strengthText = `Strength: ${strengthInfo.strength}`;
 
