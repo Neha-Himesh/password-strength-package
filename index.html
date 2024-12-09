@@ -25,7 +25,16 @@
 </head>
 <body>
     <h1>Password Strength Demo</h1>
-    <input type="password" id="password" placeholder="Enter your password" oninput="updateStrength()">
+    <form onsubmit="updateStrength()">
+        <input type="password" id="password" placeholder="Enter your password" >
+        <input type="text" id="password-language" placeholder="Enter the language of your password">
+        <label for="case-sensitive-input">Is the language case sensitive?</label>
+        <select id="case-sensitive-input" name="case-sensitive-input">
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </select>
+    </form>
+
     <p id="strength"></p>
     <script>
         function checkStrength(password, language, caseSensitive, minLength, maxLength){
@@ -100,7 +109,9 @@
 
         function updateStrength() {
             var password = document.getElementById("password").value;
-            var strengthInfo = checkStrength(password);
+            var passwordLanguage = document.getElementById("password-language").value;
+            var languageCaseSensitivity = document.getElementById("case-sensitive-input").value;
+            var strengthInfo = checkStrength(password, passwordLanguage, languageCaseSensitivity, 8, 15);
             var strengthText = `Strength: ${strengthInfo.strength}`;
 
             if (strengthInfo.suggestions.length > 0) {
