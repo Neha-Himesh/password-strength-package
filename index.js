@@ -1,5 +1,5 @@
 function checkStrength(password, language, caseSensitive, minLength, maxLength){
-   
+   //https://neha-himesh.github.io/password-strength-package/
     var passwordReview = {
         strength: "",
         suggestions: [],
