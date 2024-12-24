@@ -152,10 +152,6 @@
             <option value="Yoruba"> Yoruba </option>
         </select>
         <label for="case-sensitive-input">Is the language case sensitive?</label>
-        <select id="case-sensitive-input" name="case-sensitive-input">
-            <option value="true">True</option>
-            <option value="false">False</option>
-        </select>
         <button type="submit">Check Strength</button>
     </form>
 
@@ -234,8 +230,8 @@
         function updateStrength() {
             event.preventDefault(); // Prevent form from reloading the page
             var password = document.getElementById("password").value;
-            var passwordLanguage = document.getElementById("password-language").value;
-            var languageCaseSensitivity = document.getElementById("case-sensitive-input").value === "true";
+            var passwordLanguage = document.getElementById("password-language").value === "true";
+            var languageCaseSensitivity = isCaseSensitive(passwordLanguage); //document.getElementById("case-sensitive-input").value === "true";
             var strengthInfo = checkStrength(password, passwordLanguage, languageCaseSensitivity, 8, 15);
             var strengthText = `Strength: ${strengthInfo.strength}`;
 
@@ -249,6 +245,137 @@
 
             document.getElementById("strength").innerHTML = strengthText;
         }
+
+        function isCaseSensitive(language) {
+            switch (language) {
+                // Case-sensitive languages
+                case 'Afrikaans':
+                case 'Amharic':
+                case 'Arabic':
+                case 'Armenian':
+                case 'Assamese':
+                case 'Azerbaijani':
+                case 'Basque':
+                case 'Bislama':
+                case 'Bosnian':
+                case 'Breton':
+                case 'Bulgarian':
+                case 'Catalan':
+                case 'Corsican':
+                case 'Croatian':
+                case 'Czech':
+                case 'Danish':
+                case 'Dutch':
+                case 'Divehi':
+                case 'English':
+                case 'Esperanto':
+                case 'Estonian':
+                case 'Faroese':
+                case 'Filipino':
+                case 'Finnish':
+                case 'French':
+                case 'Galician':
+                case 'German':
+                case 'Greek':
+                case 'Gujarati':
+                case 'Hausa':
+                case 'Hebrew':
+                case 'Hindi':
+                case 'Hungarian':
+                case 'Icelandic':
+                case 'Indonesian':
+                case 'Irish':
+                case 'Italian':
+                case 'Javanese':
+                case 'Kannada':
+                case 'Kazakh':
+                case 'Kinyarwanda':
+                case 'Kyrgyz':
+                case 'Kurdish':
+                case 'Latin':
+                case 'Latvian':
+                case 'Lithuanian':
+                case 'Luxembourgish':
+                case 'Macedonian':
+                case 'Malagasy':
+                case 'Maltese':
+                case 'Malay':
+                case 'Malayalam':
+                case 'Marathi':
+                case 'Maori':
+                case 'Nepali':
+                case 'Norwegian':
+                case 'Pashto':
+                case 'Polish':
+                case 'Portuguese':
+                case 'Punjabi':
+                case 'Romanian':
+                case 'Russian':
+                case 'Serbian':
+                case 'Shona':
+                case 'Sindhi':
+                case 'Sinhala':
+                case 'Slovak':
+                case 'Slovenian':
+                case 'Spanish':
+                case 'Sundanese':
+                case 'Swahili':
+                case 'Swedish':
+                case 'Tamil':
+                case 'Telugu':
+                case 'Tatar':
+                case 'Turkish':
+                case 'Ukrainian':
+                case 'Urdu':
+                case 'Uzbek':
+                case 'Volapük':
+                case 'Welsh':
+                case 'Xhosa':
+                case 'Yoruba':
+                case 'Zulu':
+                    return true; // Case-sensitive
+
+                // Case-insensitive languages
+                case 'Aymara':
+                case 'Berber':
+                case 'Burmese':
+                case 'Cherokee':
+                case 'Chinese':
+                case 'Cree':
+                case 'Dzongkha':
+                case 'Ewe':
+                case 'Georgian':
+                case 'Inuktitut':
+                case 'Japanese':
+                case 'Khmer':
+                case 'Korean':
+                case 'Lao':
+                case 'Mongolian':
+                case 'Odia (Oriya)':
+                case 'Persian (Farsi)':
+                case 'Quechua':
+                case 'Samoan':
+                case 'Sanskrit':
+                case 'Sesotho':
+                case 'Somali':
+                case 'Thai':
+                case 'Tibetan':
+                case 'Tongan':
+                case 'Tigrinya':
+                case 'Tsonga':
+                case 'Vietnamese':
+                case 'Wolof':
+                case 'Yiddish':
+                    return false; // Case-insensitive
+
+                // Default case
+                default:
+                    console.warn(`Language "${language}" not explicitly handled. Assuming case-sensitive.`);
+                    return true;
+            }
+        }
+
+
 
     </script>
 </body>
