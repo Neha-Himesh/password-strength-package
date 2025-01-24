@@ -1,5 +1,6 @@
 
 function updateStrength() {
+    console.log("Password check");
     event.preventDefault(); // Prevent form from reloading the page
     var password = document.getElementById("password").value;
     var languageCaseSensitivity = document.getElementById("case-sensitive-input").value === "true";

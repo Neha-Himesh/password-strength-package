@@ -1,10 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Fetching main sub-menu of the dropdown
+    const tableOfContentsMainSection = document.getElementById('about');
     // Fetching all the elements which are submenus of the product dropdown
+    if(tableOfContentsMainSection.classList.contains('d-none')){
+        tableOfContentsMainSection.classList.remove('d-none');
+    }
     const tableOfContentsDocumentationSections = document.querySelectorAll('.table-of-contents-home-page-documentation[data-target]');
     // Fetching main menu of the dropdown
     const tableOfContentsDocumentationList = document.getElementById('table-of-contents-documentation-list');
-    // Fetching main sub-menu of the dropdown
-    const tableOfContentsMainSection = document.getElementById('about');
+ 
     // Assigning previous element which was supposed to be displayed in the sub-menu as main sub-menu
     let elementHavingPreviousTargetId = tableOfContentsMainSection;
 
@@ -24,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+
 
 //     // When mouse leaves the main menu, remove the 'd-none' class from the main sub-menu
 //     tableOfContentsDocumentationList.addEventListener('', function () {
