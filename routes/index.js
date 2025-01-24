@@ -17,7 +17,7 @@ app.set('views', path.join(__dirname, '../views')); // Ensure your index.hbs is 
 app.use(express.static(path.join(__dirname, '../public')));
 // app.use(express.static(path.join(__dirname, '../dist'))); // For precompiled files
 
-// Route to serve the main page
+// Route to render index.hbs
 app.get('/', (req, res) => {
     res.render('main_page'); // Adjust filename as needed
 });
