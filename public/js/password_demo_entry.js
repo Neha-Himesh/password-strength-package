@@ -2,7 +2,7 @@
 function updateStrength() {
     event.preventDefault(); // Prevent form from reloading the page
     var password = document.getElementById("password").value;
-    var languageCaseSensitivity = document.getElementById("case-sensitive-input").value === "true";
+    var languageCaseSensitivity = isCaseSensitive(passwordLanguage); //document.getElementById("case-sensitive-input").value === "true";
     var strengthInfo = checkStrength(password, languageCaseSensitivity, 8, 15);
     var strengthText = `Strength: ${strengthInfo.strength}`;
 

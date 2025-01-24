@@ -4,13 +4,13 @@
             {{> _password_strength_package_description }}
             {{> _password_demo_entry }}
         </div>
-        <a class="carousel-control-prev" href="#home-page-carousel" role="button" data-bs-slide="prev">
+        <a class="carousel-control-prev" href="#home-page-carousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#home-page-carousel" role="button" data-bs-slide="next">
+        <a class="carousel-control-next" href="#home-page-carousel" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span class="sr-only">Next</span>
         </a>
         {{!-- <ul class="carousel-indicators">
             <li data-bs-target="#home-page-carousel" data-bs-slide-to="0" class="active"></li>  <!-- First dot (active by default) -->
@@ -20,10 +20,10 @@
    
     <hr class="m-1">
     <div class="d-flex column justify-content-center gap-5">
-        <a href="#documentation">Documentation</a>
-        <a href="#installation">Installation</a>
-        <a href="#code-samples">Code Samples</a>
-        <a href="#license">License</a>
+        <a><div> Documentation</div></a>
+        <a><div> Installation</div></a>
+        <a><div> Code Samples</div></a>
+        <a><div> License</div></a>
     </div>
     <hr>
     <div>
@@ -41,11 +41,97 @@
                     </div> 
                 </div>
             </div>
-            <div class="col-8" id="documentation">
-                {{> _documentation_partials/_about_documentation}}          
-                {{> _documentation_partials/_features_documentation}}     
-                {{> _documentation_partials/_api_reference_documentation}}     
-                {{> _documentation_partials/_contributing_documentation}}         
+            <div class="col-8">
+                <section id="about">
+                    <div class="row justify-content-center">
+                        <div>
+                            <h3 class="text-center">About</h3>
+                        </div>
+                        <div>
+                            <p class=" fs-5  fw-light">
+                                This module provides a utility function to evaluate the strength of a given password and offers suggestions for improvement.
+                            </p>
+                            <p class=" fs-5  fw-light"> 
+                                Anyone with the desire to include password checks for their registered users can use it.
+                            </p>
+                            <p class=" fs-5  fw-light">
+                                Its simple, <strong> free </strong> and also occupies <strong> less </strong> memory.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                 <section id="features">
+                    <div class="row justify-content-center">
+                        <div>
+                            <h3 class="text-center">Features</h3>
+                        </div>
+                        <div>
+                            <p class=" fs-5  fw-light">
+                                
+                                Checks if the password meets the following criteria:
+                                    Minimum length of 8 characters
+                                    Contains at least one uppercase letter
+                                    Contains at least one lowercase letter
+                                    Contains at least one digit
+                                    Contains at least one special character
+                            </p>
+                            <p class=" fs-5  fw-light"> 
+                                Returns a strength level and boolean validity.
+                            </p>
+                            <p class=" fs-5  fw-light">
+                              Provides suggestions for improvement when the password does not meet specific criteria.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                 <section id="api-reference">
+                    <div class="row justify-content-center">
+                        <div>
+                            <h3 class="text-center">API Reference</h3>
+                        </div>
+                        <div>
+                            <p class=" fs-5  fw-light">
+                               Function: checkStrength(password)
+                                Parameters:
+                                password (string):
+                                The password to evaluate.
+
+                                Returns:
+                                An object containing:
+
+                                booleanValue (boolean):
+                                Whether the password meets all criteria.
+                                true - Password meets all criteria
+                                false - Password does not meet one or more criteria
+
+                                strength (number):
+                                Password strength level:
+                                0 - Weak
+                                1 - Moderate
+                                2 - Strong
+
+                                suggestions (array):
+                                Suggestions for improving the password.
+
+                                Dependencies:
+                                password_suggestions:
+                                An external module that provides suggestions for password improvements. Ensure the module exports properties like:
+
+                                lengthCheck
+                                capitalLetterCheck
+                                smallLetterCheck
+                                digitCheck
+                                specialCharacterCheck
+                            </p>
+                            {{!-- <p class=" fs-5  fw-light"> 
+                                Anyone with the desire to include password checks for their registered users can use it.
+                            </p>
+                            <p class=" fs-5  fw-light">
+                                Its simple, <strong> free </strong> and also occupies <strong> less </strong> memory.
+                            </p> --}}
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
