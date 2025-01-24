@@ -23,7 +23,7 @@ function checkStrength(password, caseSensitive, minLength, maxLength){
         passwordReview.suggestions.push(passwordSuggestions.lengthCheck);
         totalIfCases ++;
     }
-    if (caseSensitive === true){
+    if (caseSensitive === Yes){
         //Checking if there is atleast 1 captial letter
         if ((/\p{Lu}/u).test(password)){
             passwordStrengthCount ++;
