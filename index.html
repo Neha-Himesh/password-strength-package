@@ -28,399 +28,168 @@
         </style>
     </head>
     <body>
+    <div class="container">
+        <div class="carousel slide" data-bs-ride="carousel" id="home-page-carousel">
+            <div class="carousel-inner">
+                {{> _password_strength_package_description }}
+                {{> _password_demo_entry }}
+            </div>
+            <a class="carousel-control-prev" href="#home-page-carousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"> < </span>
+                <span class="">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#home-page-carousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"> > </span>
+                <span class="">Next</span>
+            </a>
+            {{!-- <ul class="carousel-indicators">
+                <li data-bs-target="#home-page-carousel" data-bs-slide-to="0" class="active"></li>  <!-- First dot (active by default) -->
+                <li data-bs-target="#home-page-carousel" data-bs-slide-to="1"></li>  <!-- Second dot -->
+            </ul> --}}
+        </div>
+       
+        <hr class="m-1">
+        <div class="d-flex column justify-content-center gap-5">
+            <a href="#documentation" data-target="documentation">Documentation</a>
+            <a href="#installation" data-target="installation">Installation</a>
+            <a href="#code-samples" data-target="code-samples">Code Samples</a>
+            <a href="#license" data-target="license">License</a>
+        </div>
+        <hr>
         <div>
-            <div>
+           {{> _documentation}}
+           {{> _installation}}
+        </div>
+    </div>
+    
+    <div class="row d-none" id="documentation">
+        <div class="col-3">
+            <div class="row">
                 <div>
-                    <h1>Password Strength Package</h1>
-                    <h3>A powerful Node.js package to assess password strength in multiple languages and character sets</h3>
-                    <div>
-                        <a class="button" href="">Try it</a>
-                        <a class="button" href="">Download it</a>
-                    </div>
+                    <h3>Table of Contents</h3>
                 </div>
-            </div>
-            <hr>
-            <div class="d-flex column">
-                <a><div> Documentation</div></a>
-                <a><div> Installation</div></a>
-                <a><div> Code Samples</div></a>
-                <a><div> License</div></a>
-            </div>
-            <hr>
-            <div>
-                <div class="row">
-                    <div class="col-3 offset-1">
-                        <div class="row">
-                            <div>
-
-                            </div>
-                            <div>
-                                
-                            </div>
-
-                        </div>
-                        Table of Contents
-                    </div>
-                    <div class="col-8">
-
-                    </div>
-                </div>
+                <div id="table-of-contents-documentation-list" class="table-of-contents-sticky list-group">
+                    <a class="list-group-item list-group-item-action ps-0 active text-500 table-of-contents-home-page-documentation" href="#about" data-target="about"><h6>About</h6></a>
+                    <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-documentation" href="#features" data-target="features"><h6>Features</h6></a>
+                    <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-documentation" href="#api-reference" data-target="api-reference"><h6>API Reference</h6></a>
+                    <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-documentation" href="#contributing" data-target="contributing"><h6>Contributing</h6></a>
+                </div> 
             </div>
         </div>
+        <div class="col-8" id="documentation-contents">
+            {{> _documentation_partials/_about_documentation}}         
+            {{> _documentation_partials/_features_documentation}}    
+            {{> _documentation_partials/_api_reference_documentation}}        
+             {{> _documentation_partials/_contributing_documentation}} 
+        </div>
+    </div>
+    
+    <section id="about" class="">
+        <div class="row justify-content-center">
+            <div>
+                <h3 class="text-center">About</h3>
+            </div>
+            <div>
+                <ul>
+                    <li>This module provides a utility function to evaluate the strength of a given password and offers suggestions for improvement.</li>
+                    <li>Anyone with the desire to include password checks for their registered users can use it.</li>
+                    <li> Its simple, <strong> free </strong> and also occupies <strong> less </strong> memory.</li>
+                </ul>    
+                    
+                {{!-- </p>
+                <p class=" fs-6  "> 
+                 
+                </p>
+                <p class=" fs-6 ">
+                   
+                </p> --}}
+            </div>
+        </div>
+    </section>
+    <section id="features" class="d-none">
+        <div class="row justify-content-center">
+            <div>
+                <h3 class="text-center">Features</h3>
+            </div>
+            <div>
+                <p class=" fs-5  fw-light">
+                    <ul>
+                        <li>  Checks if the password meets the following criteria: </li>
+                            <ul>
+                                <li>Minimum length of 8 characters</li>
+                                <li>Contains at least one uppercase letter</li>
+                                <li>Contains at least one lowercase letter</li>
+                                <li>Contains at least one digit</li>
+                                <li>Contains at least one special character</li>
+                            </ul>
+                        <li>  Returns a strength level and boolean validity.</li>
+                        <li>  Provides suggestions for improvement when the password does not meet specific criteria.</li>
+                    </ul>
+                </p>    
+            </div>
+        </div>
+    </section>
+     <section id="api-reference" class="d-none">
+        <div class="row justify-content-center">
+            <div>
+                <h3 class="text-center">API Reference</h3>
+            </div>
+            <div>
+                <p class=" fs-5  fw-light">
+                    
+                    <ul>
+                        <li><h5>Function:</h5> checkStrength(password)</li>
+                        <li><h5>Parameters:</h5>
+                        <ul>
+                            <li><h6>password (string):</h6> The password to evaluate.</li>
+                            <li><h6>case-sensitive (boolean):</h6> The value which describes if password's language is case sensitive or not </li>
+                        </ul>
+                
+                        </li>
+                        <li><h5>Returns:</h5><h6>An object containing:</h6></li>
+                        <li> <h6>booleanValue (boolean):</h6> Whether the password meets all criteria.
+                            <ul>
+                                <li>true - Password meets all criteria</li>
+                                <li>false - Password does not meet one or more criteria</li>
+                            </ul>
+                        </li>
+                        <li><h5>strength (number):</h5> <h6>Password strength level:</h6>
+                            <ul>
+                                <li>0 - Weak</li>
+                                <li>1 - Moderate</li>
+                                <li> 2 - Strong</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h5>suggestions (array):</h5>  Suggestions for improving the password.
+                        </li>
+                    
+                        <li>
+                            <h5> Dependencies:</h5> 
+                            <h6>
+                                password_suggestions:
+                            </h6>
+                            An external module that provides suggestions for password improvements. Ensure the module exports properties like:
+                            <ul>
+                                <li>lengthCheck</li>
+                                <li>capitalLetterCheck</li>
+                                <li>smallLetterCheck</li>
+                                <li>digitCheck</li>
+                                <li>specialCharacterCheck</li>
+                            </ul>
+                        </li>
+                    </ul>  
+                </p>
+            </div>
+        </div>
+    </section>
+     <section id="contributing" class="d-none">
+        <div class="row justify-content-center">
+            <h3 class="text-center">Contributing</h3>
+            <div class="fs-6">
+                Feel free to fork the repository from GitHub using the link <a href="www.github/.com/Neha-Himesh">www.github.com/Neha-Himesh</a>, make your changes, and submit a pull request.
+            </div>
+        </div>
+    </section>
     </body>
-</html>
-    <!-- <h1>Password Strength Demo</h1>
-    <form onsubmit="updateStrength()">
-        <input type="password" id="password" placeholder="Enter your password" >
-        <label for="password-language">Select the language of your password</label>
-        <select id="password-language" name="password-language">
-            <option value="Afrikaans"> Afrikaans </option>
-            <option value="Arabic"> Arabic </option>
-            <option value="Amharic"> Amharic </option>
-            <option value="Assamese"> Assamese </option>
-            <option value="Armenian"> Armenian </option>
-            <option value="Azerbaijani"> Azerbaijani </option>
-            <option value="Aymara"> Aymara </option>
-            <option value="Bengali"> Bengali </option>
-            <option value="Basque"> Basque </option>
-            <option value="Bislama"> Bislama </option>
-            <option value="Berber"> Berber </option>
-            <option value="Breton"> Breton </option>
-            <option value="Bosnian"> Bosnian </option>
-            <option value="Burmese"> Burmese </option>
-            <option value="Bulgarian"> Bulgarian </option>
-            <option value="Cherokee"> Cherokee </option>
-            <option value="Catalan"> Catalan </option>
-            <option value="Corsican"> Corsican </option>
-            <option value="Chinese"> Chinese </option>
-            <option value="Croatian"> Croatian </option>
-            <option value="Cree"> Cree </option>
-            <option value="Danish"> Danish </option>
-            <option value="Czech"> Czech </option>
-            <option value="Dutch"> Dutch </option>
-            <option value="Divehi"> Divehi </option>
-            <option value="English"> English </option>
-            <option value="Dzongkha"> Dzongkha </option>
-            <option value="Estonian"> Estonian </option>
-            <option value="Esperanto"> Esperanto </option>
-            <option value="Faroese"> Faroese </option>
-            <option value="Ewe"> Ewe </option>
-            <option value="Finnish"> Finnish </option>
-            <option value="Filipino"> Filipino </option>
-            <option value="Frisian"> Frisian </option>
-            <option value="French"> French </option>
-            <option value="Galician"> Galician </option>
-            <option value="Fula"> Fula </option>
-            <option value="German"> German </option>
-            <option value="Georgian"> Georgian </option>
-            <option value="Gujarati"> Gujarati </option>
-            <option value="Greek"> Greek </option>
-            <option value="Hausa"> Hausa </option>
-            <option value="Haitian Creole"> Creole </option>
-            <option value="Hindi"> Hindi </option>
-            <option value="Hebrew"> Hebrew </option>
-            <option value="Icelandic"> Icelandic </option>
-            <option value="Hungarian"> Hungarian </option>
-            <option value="Indonesian"> Indonesian </option>
-            <option value="Igbo"> Igbo </option>
-            <option value="Irish"> Irish </option>
-            <option value="Inuktitut"> Inuktitut </option>
-            <option value="Japanese"> Japanese </option>
-            <option value="Italian"> Italian </option>
-            <option value="Kannada"> Kannada </option>
-            <option value="Javanese"> Javanese </option>
-            <option value="Khmer"> Khmer </option>
-            <option value="Kazakh"> Kazakh </option>
-            <option value="Korean"> Korean </option>
-            <option value="Kinyarwanda"> Kinyarwanda </option>
-            <option value="Kyrgyz"> Kyrgyz </option>
-            <option value="Kurdish"> Kurdish </option>
-            <option value="Latin"> Latin </option>
-            <option value="Lao"> Lao </option>
-            <option value="Lithuanian"> Lithuanian </option>
-            <option value="Latvian"> Latvian </option>
-            <option value="Macedonian"> Macedonian </option>
-            <option value="Luxembourgish"> Luxembourgish </option>
-            <option value="Malay"> Malay </option>
-            <option value="Malagasy"> Malagasy </option>
-            <option value="Maltese"> Maltese </option>
-            <option value="Malayalam"> Malayalam </option>
-            <option value="Marathi"> Marathi </option>
-            <option value="Maori"> Maori </option>
-            <option value="Nepali"> Nepali </option>
-            <option value="Mongolian"> Mongolian </option>
-            <option value="Odia (Oriya)"></option>
-            <option value="Norwegian"> Norwegian </option>
-            <option value="Pashto"> Pashto </option>
-            <option value="Oromo"> Oromo </option>
-            <option value="Polish"> Polish </option>
-            <option value="Persian (Farsi)"></option>
-            <option value="Punjabi"> Punjabi </option>
-            <option value="Portuguese"> Portuguese </option>
-            <option value="Romanian"> Romanian </option>
-            <option value="Quechua"> Quechua </option>
-            <option value="Samoan"> Samoan </option>
-            <option value="Russian"> Russian </option>
-            <option value="Serbian"> Serbian </option>
-            <option value="Sanskrit"> Sanskrit </option>
-            <option value="Shona"> Shona </option>
-            <option value="Sesotho"> Sesotho </option>
-            <option value="Sinhala"> Sinhala </option>
-            <option value="Sindhi"> Sindhi </option>
-            <option value="Slovenian"> Slovenian </option>
-            <option value="Slovak"> Slovak </option>
-            <option value="Spanish"> Spanish </option>
-            <option value="Somali"> Somali </option>
-            <option value="Swahili"> Swahili </option>
-            <option value="Sundanese"> Sundanese </option>
-            <option value="Tamil"> Tamil </option>
-            <option value="Swedish"> Swedish </option>
-            <option value="Telugu"> Telugu </option>
-            <option value="Tatar"> Tatar </option>
-            <option value="Tibetan"> Tibetan </option>
-            <option value="Thai"> Thai </option>
-            <option value="Tongan"> Tongan </option>
-            <option value="Tigrinya"> Tigrinya </option>
-            <option value="Turkish"> Turkish </option>
-            <option value="Tsonga"> Tsonga </option>
-            <option value="Ukrainian"> Ukrainian </option>
-            <option value="Turkmen"> Turkmen </option>
-            <option value="Uzbek"> Uzbek </option>
-            <option value="Urdu"> Urdu </option>
-            <option value="Volapük"> Volapük </option>
-            <option value="Vietnamese"> Vietnamese </option>
-            <option value="Wolof"> Wolof </option>
-            <option value="Welsh"> Welsh </option>
-            <option value="Yiddish"> Yiddish </option>
-            <option value="Xhosa"> Xhosa </option>
-            <option value="Zulu"> Zulu </option>
-            <option value="Yoruba"> Yoruba </option>
-        </select>
-        <label for="case-sensitive-input">Is the language case sensitive?</label>
-        <button type="submit">Check Strength</button>
-    </form>
-
-    <p id="strength"></p>
-    <script>
-        function checkStrength(password, language, caseSensitive, minLength, maxLength){
-            
-            var passwordReview = {
-                strength: "",
-                suggestions: [],
-            }
-            var totalIfCases = 0;
-            var passwordStrengthCount = 0;
-            const regex = new RegExp(`^.{${minLength},${maxLength}}$`);
-            const regexSplCharacters = /[\s\p{P}\p{S}\p{So}]/gu;
-            if ((regex).test(password)){
-                passwordStrengthCount ++;
-                totalIfCases ++;
-            } else {
-                passwordReview.suggestions.push(`Password should contain minimum of ${minLength} characters and maximum of ${maxLength} characters`);
-                totalIfCases ++;
-            }
-            if (caseSensitive === true){
-                // Matches uppercase letters
-                if ((/\p{Lu}/u).test(password)){
-                    passwordStrengthCount ++;
-                    totalIfCases ++;
-                } else {
-                    passwordReview.suggestions.push("Password should contain atleast 1 capital letter");
-                    totalIfCases ++;
-                }
-                // Matches lowercase letters
-                if ((/\p{Ll}/u).test(password)){
-                    passwordStrengthCount ++;
-                    totalIfCases ++;
-                } else {
-                    passwordReview.suggestions.push("Password should contain atleast 1 small letter");
-                    totalIfCases ++;
-                }
-            } else {
-                if ((/\p{L}/u).test(password)){
-                    passwordStrengthCount ++;
-                    totalIfCases ++;
-                } else {
-                    passwordReview.suggestions.push("Password should contain atleast 1 letter");
-                    totalIfCases ++;
-                }               
-            }
-            
-            if ((/\p{N}/u).test(password)){
-                passwordStrengthCount ++;
-                totalIfCases ++;
-            } else {
-                passwordReview.suggestions.push("Password should contain atleast 1 digit");
-                totalIfCases ++;
-            }
-            // Matches spaces, punctuation, symbols, or emojis
-            if (regexSplCharacters.test(password)){
-                passwordStrengthCount ++;
-                totalIfCases ++;
-            } else {
-                passwordReview.suggestions.push("Password should contain atleast 1 special character, space or an emoji");
-                totalIfCases ++;
-            }
-            
-            if (passwordStrengthCount >= 0 && passwordStrengthCount <= Math.floor(totalIfCases/2)){
-                passwordReview.strength = "Weak";
-            } else if (passwordStrengthCount > Math.floor(totalIfCases/2) && passwordStrengthCount < totalIfCases ){
-                passwordReview.strength = "Medium";
-            } else {
-                passwordReview.strength = "Strong";
-            }
-            return passwordReview;
-        }
-
-        function updateStrength() {
-            event.preventDefault(); // Prevent form from reloading the page
-            var password = document.getElementById("password").value;
-            var passwordLanguage = document.getElementById("password-language").value === "true";
-            var languageCaseSensitivity = isCaseSensitive(passwordLanguage); //document.getElementById("case-sensitive-input").value === "true";
-            var strengthInfo = checkStrength(password, passwordLanguage, languageCaseSensitivity, 8, 15);
-            var strengthText = `Strength: ${strengthInfo.strength}`;
-
-            if (strengthInfo.suggestions.length > 0) {
-                strengthText += `<br><strong>Suggestions:</strong><ul>`;
-                strengthInfo.suggestions.forEach(suggestion => {
-                    strengthText += `<li>${suggestion}</li>`;
-                });
-                strengthText += `</ul>`;
-            }
-
-            document.getElementById("strength").innerHTML = strengthText;
-        }
-
-        function isCaseSensitive(language) {
-            switch (language) {
-                // Case-sensitive languages
-                case 'Afrikaans':
-                case 'Amharic':
-                case 'Arabic':
-                case 'Armenian':
-                case 'Assamese':
-                case 'Azerbaijani':
-                case 'Basque':
-                case 'Bislama':
-                case 'Bosnian':
-                case 'Breton':
-                case 'Bulgarian':
-                case 'Catalan':
-                case 'Corsican':
-                case 'Croatian':
-                case 'Czech':
-                case 'Danish':
-                case 'Dutch':
-                case 'Divehi':
-                case 'English':
-                case 'Esperanto':
-                case 'Estonian':
-                case 'Faroese':
-                case 'Filipino':
-                case 'Finnish':
-                case 'French':
-                case 'Galician':
-                case 'German':
-                case 'Greek':
-                case 'Gujarati':
-                case 'Hausa':
-                case 'Hebrew':
-                case 'Hindi':
-                case 'Hungarian':
-                case 'Icelandic':
-                case 'Indonesian':
-                case 'Irish':
-                case 'Italian':
-                case 'Javanese':
-                case 'Kannada':
-                case 'Kazakh':
-                case 'Kinyarwanda':
-                case 'Kyrgyz':
-                case 'Kurdish':
-                case 'Latin':
-                case 'Latvian':
-                case 'Lithuanian':
-                case 'Luxembourgish':
-                case 'Macedonian':
-                case 'Malagasy':
-                case 'Maltese':
-                case 'Malay':
-                case 'Malayalam':
-                case 'Marathi':
-                case 'Maori':
-                case 'Nepali':
-                case 'Norwegian':
-                case 'Pashto':
-                case 'Polish':
-                case 'Portuguese':
-                case 'Punjabi':
-                case 'Romanian':
-                case 'Russian':
-                case 'Serbian':
-                case 'Shona':
-                case 'Sindhi':
-                case 'Sinhala':
-                case 'Slovak':
-                case 'Slovenian':
-                case 'Spanish':
-                case 'Sundanese':
-                case 'Swahili':
-                case 'Swedish':
-                case 'Tamil':
-                case 'Telugu':
-                case 'Tatar':
-                case 'Turkish':
-                case 'Ukrainian':
-                case 'Urdu':
-                case 'Uzbek':
-                case 'Volapük':
-                case 'Welsh':
-                case 'Xhosa':
-                case 'Yoruba':
-                case 'Zulu':
-                    return true; // Case-sensitive
-
-                // Case-insensitive languages
-                case 'Aymara':
-                case 'Berber':
-                case 'Burmese':
-                case 'Cherokee':
-                case 'Chinese':
-                case 'Cree':
-                case 'Dzongkha':
-                case 'Ewe':
-                case 'Georgian':
-                case 'Inuktitut':
-                case 'Japanese':
-                case 'Khmer':
-                case 'Korean':
-                case 'Lao':
-                case 'Mongolian':
-                case 'Odia (Oriya)':
-                case 'Persian (Farsi)':
-                case 'Quechua':
-                case 'Samoan':
-                case 'Sanskrit':
-                case 'Sesotho':
-                case 'Somali':
-                case 'Thai':
-                case 'Tibetan':
-                case 'Tongan':
-                case 'Tigrinya':
-                case 'Tsonga':
-                case 'Vietnamese':
-                case 'Wolof':
-                case 'Yiddish':
-                    return false; // Case-insensitive
-
-                // Default case
-                default:
-                    console.warn(`Language "${language}" not explicitly handled. Assuming case-sensitive.`);
-                    return true;
-            }
-        }
-
-
-
-    </script> -->
-
+</html>    
