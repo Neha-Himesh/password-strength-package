@@ -53,30 +53,30 @@
                             <div class="m-3">
                                 <h1>Test it yourself!</h1>
                             </div>
-                            <div class="m-1">
+                            <div class="m-3">
                                 <label for="password">
                                     <h3>
                                         Enter your password
                                     </h3>
                                 </label>
                             </div>
-                            <div class="m-1">
+                            <div class="m-3">
                                <h4><input type="password" id="password" placeholder="Enter your password"></h4> 
                             </div>
-                            <div class="m-1">
+                            <div class="m-3">
                                 <label for="case-sensitive-input">
                                     <h3>
                                         Is the language case sensitive?
                                     </h3>
                                 </label>
                             </div>
-                            <div class="m-1">
+                            <div class="m-3">
                                 <select id="case-sensitive-input" name="case-sensitive-input">
                                     <option value="true">Yes</option>
                                     <option value="false">No</option>
                                 </select>
                             </div>
-                            <div class="m-2">
+                            <div class="m-3">
                                 <a type="submit" class="btn btn-primary">
                                     Check Strength
                                 </a>
@@ -84,13 +84,24 @@
                         </div>
                     </form>
                 </div>
+                <div class="p-3 carousel-item" id="password-strength-output-box">
+                    <h1 class="text-center p-3 m-3">
+                        Password Strength
+                    </h1>
+                    <div class="text-center p-3" id="strength">
+                        
+                    </div>
+                    <div class="text-center p-3">
+                        <a class="btn btn-primary m-3" href="">Try another Password</a>
+                    </div>
+                </div>
             </div>
             <a class="carousel-control-prev" href="#home-page-carousel" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"> < </span>
+                <span class="carousel-control-prev-icon" aria-hidden="false"> < </span>
                 <span class="">Previous</span>
             </a>
             <a class="carousel-control-next" href="#home-page-carousel" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"> > </span>
+                <span class="carousel-control-next-icon" aria-hidden="false"> > </span>
                 <span class="">Next</span>
             </a>
             <!-- {{!-- <ul class="carousel-indicators">
