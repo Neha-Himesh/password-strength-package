@@ -31,49 +31,22 @@
     <div class="container">
         <div class="carousel slide" data-bs-ride="carousel" id="home-page-carousel">
             <div class="carousel-inner">
-                {{> _password_strength_package_description }}
-                {{> _password_demo_entry }}
-            </div>
-            <a class="carousel-control-prev" href="#home-page-carousel" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"> < </span>
-                <span class="">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#home-page-carousel" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"> > </span>
-                <span class="">Next</span>
-            </a>
-            {{!-- <ul class="carousel-indicators">
-                <li data-bs-target="#home-page-carousel" data-bs-slide-to="0" class="active"></li>  <!-- First dot (active by default) -->
-                <li data-bs-target="#home-page-carousel" data-bs-slide-to="1"></li>  <!-- Second dot -->
-            </ul> --}}
-        </div>
-       
-        <hr class="m-1">
-        <div class="d-flex column justify-content-center gap-5">
-            <a href="#documentation" data-target="documentation">Documentation</a>
-            <a href="#installation" data-target="installation">Installation</a>
-            <a href="#code-samples" data-target="code-samples">Code Samples</a>
-            <a href="#license" data-target="license">License</a>
-        </div>
-        <hr>
-        <div>
-            <div class="p-3 carousel-item active" id="password-strength-top-box">
-                <h1 class="text-center p-3 m-3">
-                    Password Strength Checker Package
-                </h1>
-                <div class="text-center p-3">
-                    <img class="" src="/images/password_icon.png" alt="password icon image" width="125px" height="125px">
+                <div class="p-3 carousel-item active" id="password-strength-top-box">
+                    <h1 class="text-center p-3 m-3">
+                        Password Strength Checker Package
+                    </h1>
+                    <div class="text-center p-3">
+                        <img class="" src="/images/password_icon.png" alt="password icon image" width="125px" height="125px">
+                    </div>
+                    <h3 class="text-center p-3 m-1">
+                        A powerful Node.js package to assess password strength in multiple languages and character sets
+                    </h3>
+                    <div class="text-center p-3">
+                        <a class="btn btn-primary m-3" href="">Try it</a>
+                        <a class="btn btn-primary" href="">Download it</a>
+                    </div>
                 </div>
-                <h3 class="text-center p-3 m-1">
-                    A powerful Node.js package to assess password strength in multiple languages and character sets
-                </h3>
-                <div class="text-center p-3">
-                    <a class="btn btn-primary m-3" href="">Try it</a>
-                    <a class="btn btn-primary" href="">Download it</a>
-                </div>
-            </div>
-            
-            
+               
             <div class="carousel-item" id="carousel-slide-2">
                 <form onsubmit="updateStrength()">
                     <div class="row justify-content-center text-center p-3">
@@ -112,135 +85,157 @@
                 </form>
                 
             </div>
+            </div>
+            <a class="carousel-control-prev" href="#home-page-carousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"> < </span>
+                <span class="">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#home-page-carousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"> > </span>
+                <span class="">Next</span>
+            </a>
+            <!-- {{!-- <ul class="carousel-indicators">
+                <li data-bs-target="#home-page-carousel" data-bs-slide-to="0" class="active"></li>  First dot (active by default) -->
+                <!-- <li data-bs-target="#home-page-carousel" data-bs-slide-to="1"></li>   Second dot -->
+            <!-- </ul> -->
+        </div>
+       
+        <hr class="m-1">
+        <div class="d-flex column justify-content-center gap-5">
+            <a href="#documentation" data-target="documentation">Documentation</a>
+            <a href="#installation" data-target="installation">Installation</a>
+            <a href="#code-samples" data-target="code-samples">Code Samples</a>
+            <a href="#license" data-target="license">License</a>
+        </div>
+        <hr>
+        <div>
+            <div class="row d-none" id="documentation">
+                <div class="col-3">
+                    <div class="row">
+                        <div>
+                            <h3>Table of Contents</h3>
+                        </div>
+                        <div id="table-of-contents-documentation-list" class="table-of-contents-sticky list-group">
+                            <a class="list-group-item list-group-item-action ps-0 active text-500 table-of-contents-home-page-documentation" href="#about" data-target="about"><h6>About</h6></a>
+                            <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-documentation" href="#features" data-target="features"><h6>Features</h6></a>
+                            <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-documentation" href="#api-reference" data-target="api-reference"><h6>API Reference</h6></a>
+                            <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-documentation" href="#contributing" data-target="contributing"><h6>Contributing</h6></a>
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-8" id="documentation-contents">
+                    <section id="about" class="">
+                        <div class="row justify-content-center">
+                            <div>
+                                <h3 class="text-center">About</h3>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>This module provides a utility function to evaluate the strength of a given password and offers suggestions for improvement.</li>
+                                    <li>Anyone with the desire to include password checks for their registered users can use it.</li>
+                                    <li> Its simple, <strong> free </strong> and also occupies <strong> less </strong> memory.</li>
+                                </ul>    
+                                    
+                                {{!-- </p>
+                                <p class=" fs-6  "> 
+                                 
+                                </p>
+                                <p class=" fs-6 ">
+                                   
+                                </p> --}}
+                            </div>
+                        </div>
+                    </section>
+                    <section id="features" class="d-none">
+                        <div class="row justify-content-center">
+                            <div>
+                                <h3 class="text-center">Features</h3>
+                            </div>
+                            <div>
+                                <p class=" fs-5  fw-light">
+                                    <ul>
+                                        <li>  Checks if the password meets the following criteria: </li>
+                                            <ul>
+                                                <li>Minimum length of 8 characters</li>
+                                                <li>Contains at least one uppercase letter</li>
+                                                <li>Contains at least one lowercase letter</li>
+                                                <li>Contains at least one digit</li>
+                                                <li>Contains at least one special character</li>
+                                            </ul>
+                                        <li>  Returns a strength level and boolean validity.</li>
+                                        <li>  Provides suggestions for improvement when the password does not meet specific criteria.</li>
+                                    </ul>
+                                </p>    
+                            </div>
+                        </div>
+                    </section>
+                     <section id="api-reference" class="d-none">
+                        <div class="row justify-content-center">
+                            <div>
+                                <h3 class="text-center">API Reference</h3>
+                            </div>
+                            <div>
+                                <p class=" fs-5  fw-light">
+                                    
+                                    <ul>
+                                        <li><h5>Function:</h5> checkStrength(password)</li>
+                                        <li><h5>Parameters:</h5>
+                                        <ul>
+                                            <li><h6>password (string):</h6> The password to evaluate.</li>
+                                            <li><h6>case-sensitive (boolean):</h6> The value which describes if password's language is case sensitive or not </li>
+                                        </ul>
+                                
+                                        </li>
+                                        <li><h5>Returns:</h5><h6>An object containing:</h6></li>
+                                        <li> <h6>booleanValue (boolean):</h6> Whether the password meets all criteria.
+                                            <ul>
+                                                <li>true - Password meets all criteria</li>
+                                                <li>false - Password does not meet one or more criteria</li>
+                                            </ul>
+                                        </li>
+                                        <li><h5>strength (number):</h5> <h6>Password strength level:</h6>
+                                            <ul>
+                                                <li>0 - Weak</li>
+                                                <li>1 - Moderate</li>
+                                                <li> 2 - Strong</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <h5>suggestions (array):</h5>  Suggestions for improving the password.
+                                        </li>
+                                    
+                                        <li>
+                                            <h5> Dependencies:</h5> 
+                                            <h6>
+                                                password_suggestions:
+                                            </h6>
+                                            An external module that provides suggestions for password improvements. Ensure the module exports properties like:
+                                            <ul>
+                                                <li>lengthCheck</li>
+                                                <li>capitalLetterCheck</li>
+                                                <li>smallLetterCheck</li>
+                                                <li>digitCheck</li>
+                                                <li>specialCharacterCheck</li>
+                                            </ul>
+                                        </li>
+                                    </ul>  
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                     <section id="contributing" class="d-none">
+                        <div class="row justify-content-center">
+                            <h3 class="text-center">Contributing</h3>
+                            <div class="fs-6">
+                                Feel free to fork the repository from GitHub using the link <a href="www.github/.com/Neha-Himesh">www.github.com/Neha-Himesh</a>, make your changes, and submit a pull request.
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
             
         </div>
     </div>
-    
-    <div class="row d-none" id="documentation">
-        <div class="col-3">
-            <div class="row">
-                <div>
-                    <h3>Table of Contents</h3>
-                </div>
-                <div id="table-of-contents-documentation-list" class="table-of-contents-sticky list-group">
-                    <a class="list-group-item list-group-item-action ps-0 active text-500 table-of-contents-home-page-documentation" href="#about" data-target="about"><h6>About</h6></a>
-                    <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-documentation" href="#features" data-target="features"><h6>Features</h6></a>
-                    <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-documentation" href="#api-reference" data-target="api-reference"><h6>API Reference</h6></a>
-                    <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-documentation" href="#contributing" data-target="contributing"><h6>Contributing</h6></a>
-                </div> 
-            </div>
-        </div>
-        <div class="col-8" id="documentation-contents">
-            <section id="about" class="">
-                <div class="row justify-content-center">
-                    <div>
-                        <h3 class="text-center">About</h3>
-                    </div>
-                    <div>
-                        <ul>
-                            <li>This module provides a utility function to evaluate the strength of a given password and offers suggestions for improvement.</li>
-                            <li>Anyone with the desire to include password checks for their registered users can use it.</li>
-                            <li> Its simple, <strong> free </strong> and also occupies <strong> less </strong> memory.</li>
-                        </ul>    
-                            
-                        {{!-- </p>
-                        <p class=" fs-6  "> 
-                         
-                        </p>
-                        <p class=" fs-6 ">
-                           
-                        </p> --}}
-                    </div>
-                </div>
-            </section>
-            <section id="features" class="d-none">
-                <div class="row justify-content-center">
-                    <div>
-                        <h3 class="text-center">Features</h3>
-                    </div>
-                    <div>
-                        <p class=" fs-5  fw-light">
-                            <ul>
-                                <li>  Checks if the password meets the following criteria: </li>
-                                    <ul>
-                                        <li>Minimum length of 8 characters</li>
-                                        <li>Contains at least one uppercase letter</li>
-                                        <li>Contains at least one lowercase letter</li>
-                                        <li>Contains at least one digit</li>
-                                        <li>Contains at least one special character</li>
-                                    </ul>
-                                <li>  Returns a strength level and boolean validity.</li>
-                                <li>  Provides suggestions for improvement when the password does not meet specific criteria.</li>
-                            </ul>
-                        </p>    
-                    </div>
-                </div>
-            </section>
-             <section id="api-reference" class="d-none">
-                <div class="row justify-content-center">
-                    <div>
-                        <h3 class="text-center">API Reference</h3>
-                    </div>
-                    <div>
-                        <p class=" fs-5  fw-light">
-                            
-                            <ul>
-                                <li><h5>Function:</h5> checkStrength(password)</li>
-                                <li><h5>Parameters:</h5>
-                                <ul>
-                                    <li><h6>password (string):</h6> The password to evaluate.</li>
-                                    <li><h6>case-sensitive (boolean):</h6> The value which describes if password's language is case sensitive or not </li>
-                                </ul>
-                        
-                                </li>
-                                <li><h5>Returns:</h5><h6>An object containing:</h6></li>
-                                <li> <h6>booleanValue (boolean):</h6> Whether the password meets all criteria.
-                                    <ul>
-                                        <li>true - Password meets all criteria</li>
-                                        <li>false - Password does not meet one or more criteria</li>
-                                    </ul>
-                                </li>
-                                <li><h5>strength (number):</h5> <h6>Password strength level:</h6>
-                                    <ul>
-                                        <li>0 - Weak</li>
-                                        <li>1 - Moderate</li>
-                                        <li> 2 - Strong</li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <h5>suggestions (array):</h5>  Suggestions for improving the password.
-                                </li>
-                            
-                                <li>
-                                    <h5> Dependencies:</h5> 
-                                    <h6>
-                                        password_suggestions:
-                                    </h6>
-                                    An external module that provides suggestions for password improvements. Ensure the module exports properties like:
-                                    <ul>
-                                        <li>lengthCheck</li>
-                                        <li>capitalLetterCheck</li>
-                                        <li>smallLetterCheck</li>
-                                        <li>digitCheck</li>
-                                        <li>specialCharacterCheck</li>
-                                    </ul>
-                                </li>
-                            </ul>  
-                        </p>
-                    </div>
-                </div>
-            </section>
-             <section id="contributing" class="d-none">
-                <div class="row justify-content-center">
-                    <h3 class="text-center">Contributing</h3>
-                    <div class="fs-6">
-                        Feel free to fork the repository from GitHub using the link <a href="www.github/.com/Neha-Himesh">www.github.com/Neha-Himesh</a>, make your changes, and submit a pull request.
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-    
     
     </body>
 </html>    
