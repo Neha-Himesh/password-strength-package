@@ -5,9 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node routes/index.js",
-    "sass": "sass --watch public/src/sass/styles.sass:public/src/css/main.css",
-    "build": "npm run sass && node scripts/build.js"
-    
+    "sass": "sass --watch public/src/sass/styles.sass:public/src/css/main.css"
   },
   "author": "Neha Himesh (nehahimesh.10@gmail.com)",
   "bin": {

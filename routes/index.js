@@ -4,7 +4,7 @@ const path = require('path');
 
 const app = express();
 
-// Set up handlebars as the templating engine
+//Set up handlebars as the templating engine
 app.engine('hbs', expressHbs.engine({
     extname: '.hbs',
     layoutsDir: path.join(__dirname, '../views/layouts'), // Path to layouts directory
@@ -15,11 +15,17 @@ app.set('views', path.join(__dirname, '../views')); // Ensure your index.hbs is 
 
 // Middleware to serve static files (CSS, JS, etc.)
 app.use(express.static(path.join(__dirname, '../public')));
+// app.use(express.static(path.join(__dirname, '../dist'))); // For precompiled files
 
 // Route to render index.hbs
 app.get('/', (req, res) => {
-    res.render('main_page'); // Automatically looks for main_page.hbs in the views folder
+    res.render('main_page'); // Adjust filename as needed
 });
+
+// // Catch-all route to serve the index.html for unmatched routes (if needed)
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../dist/main.html"));
+// });
 
 // Start the server
 const PORT = process.env.PORT || 3000;
