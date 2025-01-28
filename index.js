@@ -111,10 +111,17 @@ function checkStrength(password, caseSensitive, minLength, maxLength){
 document.addEventListener('DOMContentLoaded', () => {
     // Fetching main sub-menu of the dropdown
     const tableOfContentsMainSection = document.getElementById('about');
+    const tableOfContentsHighlightedSection = document.getElementById('about-link');
+
     // Fetching all the elements which are submenus of the product dropdown
     if(tableOfContentsMainSection.classList.contains('d-none')){
         tableOfContentsMainSection.classList.remove('d-none');
     }
+
+    if(!tableOfContentsHighlightedSection.contains('active')){
+        tableOfContentsHighlightedSection.classList.add('active');
+    }
+
     const tableOfContentsSections = document.querySelectorAll('.table-of-contents-home-page-links[data-target]');
     // Fetching main menu of the dropdown
     const tableOfContentsDocumentationList = document.getElementById('table-of-contents-documentation-list');
@@ -127,14 +134,18 @@ document.addEventListener('DOMContentLoaded', () => {
         option.addEventListener('click', function () {
             const targetIdOfSubSection = this.dataset.target;
             const elementWithRequiredTargetId = document.getElementById(targetIdOfSubSection);
+            var tableOfContentsToBeHighlightedSection = this;
             // Adding 'd-none' class to the previous target element and removing 'd-none' from the required target ID (sub-menu)
             if (elementHavingPreviousTargetId) {
                 elementHavingPreviousTargetId.classList.add('d-none');
+                tableOfContentsHighlightedSection.classList.remove('active');
             }
             // Assigning the required target ID to the previous target ID to save the data for the next hover
             if (elementWithRequiredTargetId) {
                 elementWithRequiredTargetId.classList.remove('d-none');
+                tableOfContentsToBeHighlightedSection.classList.add('active');
                 elementHavingPreviousTargetId = elementWithRequiredTargetId;
+                tableOfContentsHighlightedSection = tableOfContentsToBeHighlightedSection;
             }
         });
     });
