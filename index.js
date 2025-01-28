@@ -117,10 +117,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if(tableOfContentsMainSection.classList.contains('d-none')){
         tableOfContentsMainSection.classList.remove('d-none');
     }
-
-    if(!tableOfContentsHighlightedSection.classList.contains('active')){
-        tableOfContentsHighlightedSection.classList.add('active');
+    if(tableOfContentsHighlightedSection){
+        if(!tableOfContentsHighlightedSection.classList.contains('active')){
+            tableOfContentsHighlightedSection.classList.add('active');
+        }
     }
+   
 
     const tableOfContentsSections = document.querySelectorAll('.table-of-contents-home-page-links[data-target]');
     // Fetching main menu of the dropdown
