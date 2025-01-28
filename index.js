@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tableOfContentsMainSection.classList.remove('d-none');
     }
 
-    if(!tableOfContentsHighlightedSection.contains('active')){
+    if(!tableOfContentsHighlightedSection.classList.contains('active')){
         tableOfContentsHighlightedSection.classList.add('active');
     }
 
