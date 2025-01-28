@@ -111,7 +111,7 @@ function checkStrength(password, caseSensitive, minLength, maxLength){
 document.addEventListener('DOMContentLoaded', () => {
     // Fetching main sub-menu of the dropdown
     const tableOfContentsMainSection = document.getElementById('about');
-    const tableOfContentsHighlightedSection = document.getElementById('about-link');
+    var tableOfContentsHighlightedSection = document.getElementById('about-link');
 
     // Fetching all the elements which are submenus of the product dropdown
     if(tableOfContentsMainSection.classList.contains('d-none')){
