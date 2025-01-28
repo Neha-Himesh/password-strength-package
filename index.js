@@ -1,4 +1,4 @@
-passwordSuggestions = (minLength, maxLength) => ({
+const getPasswordSuggestions = (minLength, maxLength) => ({
     lengthCheck: `Password should contain minimum of ${minLength}, and maximum of ${maxLength} characters`,
     capitalLetterCheck: "Password should contain atleast 1 capital letter",
     smallLetterCheck: "Password should contain atleast 1 small letter",
@@ -7,7 +7,7 @@ passwordSuggestions = (minLength, maxLength) => ({
     letterCheck: "Password should contain atleast 1 letter",
 });
 
-function updateStrength() {
+function updateStrength(event) {
     console.log("Password check");
     event.preventDefault(); // Prevent form from reloading the page
     var password = document.getElementById("password").value;
@@ -40,7 +40,7 @@ function checkStrength(password, caseSensitive, minLength, maxLength){
     // regular expression to check existence of space/puntuation/special character/emoji
     const regexSplCharacters = /[\s\p{P}\p{S}\p{So}]/gu;
 
-    const passwordSuggestions = passwordSuggestions(minLength, maxLength);
+    const passwordSuggestions = getPasswordSuggestions(minLength, maxLength);
     //Checking if length has minimum and maximum characters length based on user's choice
     if ((regex).test(password)){
         passwordStrengthCount ++;
