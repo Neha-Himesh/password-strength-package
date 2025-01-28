@@ -1,6 +1,6 @@
 var passwordSuggestionsUsingLengthsVariables = require('./password_suggestions');
 
-function checkStrength(password, language, caseSensitive, minLength, maxLength){
+function checkStrength(password, caseSensitive, minLength, maxLength){
    
     var passwordReview = {
         booleanValue: "",
