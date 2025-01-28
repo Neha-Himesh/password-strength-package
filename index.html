@@ -31,239 +31,390 @@
                     list-style: none;
                 }
             }
+            .usage-list{
+                ul{
+                    list-style: none;
+                }
+            }
             
 
         </style>
     </head>
     <body>
-    <div class="container">
-        <div class="carousel slide" data-bs-ride="carousel" id="home-page-carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#home-page-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#home-page-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#home-page-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              </div>
-            <div class="carousel-inner">
-                <div class="p-3 carousel-item active" id="password-strength-top-box">
-                    <h1 class="text-center p-3 m-3">
-                        Password Strength Checker Package
-                    </h1>
-                    <div class="text-center p-3">
-                        <img class="" src="/images/password_icon.png" alt="password icon image" width="125px" height="125px">
-                    </div>
-                    <h3 class="text-center p-3 m-1">
-                        A powerful Node.js package to assess password strength in multiple languages and character sets
-                    </h3>
-                    <div class="text-center p-3">
-                        <a class="btn btn-primary m-3" href="" data-bs-target="password-strength-form" data-bs-slide-to="1"> Try it</a>
-                        <a class="btn btn-primary" href=""> Download it</a>
-                    </div>
-                </div>
-               
-                <div class="carousel-item" id="password-strength-form">
-                    <form onsubmit="updateStrength(event)">
-                        <div class="row justify-content-center text-center p-3">
-                            <div class="m-3">
-                                <h1>Test it yourself!</h1>
-                            </div>
-                            <div class="m-3">
-                                <label for="password">
-                                    <h3>
-                                        Enter your password
-                                    </h3>
-                                </label>
-                            </div>
-                            <div class="m-3">
-                               <h4><input type="password" id="password" placeholder="Enter your password"></h4> 
-                            </div>
-                            <div class="m-3">
-                                <label for="case-sensitive-input">
-                                    <h3>
-                                        Is the language case sensitive?
-                                    </h3>
-                                </label>
-                            </div>
-                            <div class="m-3">
-                                <select id="case-sensitive-input" name="case-sensitive-input">
-                                    <option value="true">Yes</option>
-                                    <option value="false">No</option>
-                                </select>
-                            </div>
-                            <div class="m-3">
-                                <button type="submit" class="btn btn-primary">
-                                    Check Strength in Next Slide
-                                </button>
-                            </div>
+        <div class="container">
+            <div class="carousel slide" data-bs-ride="carousel" id="home-page-carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#home-page-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#home-page-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#home-page-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  </div>
+                <div class="carousel-inner">
+                    <div class="p-3 carousel-item active" id="password-strength-top-box">
+                        <h1 class="text-center p-3 m-3">
+                            Password Strength Checker Package
+                        </h1>
+                        <div class="text-center p-3">
+                            <img class="" src="/images/password_icon.png" alt="password icon image" width="125px" height="125px">
                         </div>
-                    </form>
-                </div>
-                <div class="p-3 carousel-item" id="password-strength-output-box">
-                    <h1 class="text-center p-3 m-3">
-                        Password Strength
-                    </h1>
-                    <div class="text-center p-3" id="strength">
-                        
-                    </div>
-                    <div class="text-center p-3">
-                        <a class="btn btn-primary m-3" href="" data-bs-target="password-strength-form" data-bs-slide-to="1">Try another Password</a>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" href="#home-page-carousel" role="button" data-bs-slide="prev" aria-label="Previous">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden"> &lt; Previous</span>
-            </button>
-            <button class="carousel-control-next" href="#home-page-carousel" role="button" data-bs-slide="next" aria-label="Next">
-                <span class="carousel-control-next-icon" aria-hidden="true"> </span>
-                <span class="visually-hidden">  Next &gt;</span>
-            </button>
-            <!-- {{!-- <ul class="carousel-indicators">
-                <li data-bs-target="#home-page-carousel" data-bs-slide-to="0" class="active"></li>  First dot (active by default) -->
-                <!-- <li data-bs-target="#home-page-carousel" data-bs-slide-to="1"></li>   Second dot -->
-            <!-- </ul> -->
-        </div>
-       
-        <hr class="m-1">
-        <div class="d-flex column justify-content-center gap-5">
-            <a href="#documentation" data-target="documentation">Documentation</a>
-            <a href="#installation" data-target="installation">Installation</a>
-            <a href="#code-samples" data-target="code-samples">Code Samples</a>
-            <a href="#license" data-target="license">License</a>
-        </div>
-        <hr>
-        <div>
-            <div class="row" id="table-of-contents-home-page">
-                <div class="col-3" id="table-of-contents-left-column">
-                    <div class="row">
-                        <div>
-                            <h3>Table of Contents</h3>
+                        <h3 class="text-center p-3 m-1">
+                            A powerful Node.js package to assess password strength in multiple languages and character sets
+                        </h3>
+                        <div class="text-center p-3">
+                            <a class="btn btn-primary m-3" href="" data-bs-target="password-strength-form" data-bs-slide-to="1"> Try it</a>
+                            <a class="btn btn-primary" href=""> Download it</a>
                         </div>
-                        <div id="table-of-contents-documentation-list" class="table-of-contents-sticky list-group">
-                            <a class="list-group-item list-group-item-action ps-0 active text-500 table-of-contents-home-page-links" href="#about" data-target="about" id="about-link"><h6>About</h6></a>
-                            <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#features" data-target="features" id="features-link"><h6>Features</h6></a>
-                            <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#api-reference" data-target="api-reference" id="api-reference-link"><h6>API Reference</h6></a>
-                            <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#contributing" data-target="contributing" id="contributing-link"><h6>Contributing</h6></a>
-                            <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#installation-code" data-target="installation-code" id="installation-code-link"><h6>Installation Code</h6></a>
-                            <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#download" data-target="download" id="download-link"><h6>Download</h6></a>
-            	            <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href=“#code-samples" data-target=“code-samples" id="code-samples"><h6>Code Samples</h6></a>
- 		                    <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href=“#license" data-target=“license" id="license-link"><h6>License</h6></a>
+                    </div>
+                
+                    <div class="carousel-item" id="password-strength-form">
+                        <form onsubmit="updateStrength(event)">
+                            <div class="row justify-content-center text-center p-3">
+                                <div class="m-3">
+                                    <h1>Test it yourself!</h1>
+                                </div>
+                                <div class="m-3">
+                                    <label for="password">
+                                        <h3>
+                                            Enter your password
+                                        </h3>
+                                    </label>
+                                </div>
+                                <div class="m-3">
+                                   <h4><input type="password" id="password" placeholder="Enter your password"></h4> 
+                                </div>
+                                <div class="m-3">
+                                    <label for="case-sensitive-input">
+                                        <h3>
+                                            Is the language case sensitive?
+                                        </h3>
+                                    </label>
+                                </div>
+                                <div class="m-3">
+                                    <select id="case-sensitive-input" name="case-sensitive-input">
+                                        <option value="true">Yes</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                </div>
+                                <div class="m-3">
+                                    <button type="submit" class="btn btn-primary">
+                                        Check Strength in Next Slide
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="p-3 carousel-item" id="password-strength-output-box">
+                        <h1 class="text-center p-3 m-3">
+                            Password Strength
+                        </h1>
+                        <div class="text-center p-3" id="strength">
 
-                        </div> 
+                        </div>
+                        <div class="text-center p-3">
+                            <a class="btn btn-primary m-3" href="" data-bs-target="password-strength-form" data-bs-slide-to="1">Try another Password</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-8" id="table-of-contents-right-column">
-                    <section id="about" class="">
-                        <div class="row justify-content-center">
+                <button class="carousel-control-prev" href="#home-page-carousel" role="button" data-bs-slide="prev" aria-label="Previous">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden"> &lt; Previous</span>
+                </button>
+                <button class="carousel-control-next" href="#home-page-carousel" role="button" data-bs-slide="next" aria-label="Next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"> </span>
+                    <span class="visually-hidden">  Next &gt;</span>
+                </button>
+                <!-- {{!-- <ul class="carousel-indicators">
+                    <li data-bs-target="#home-page-carousel" data-bs-slide-to="0" class="active"></li>  First dot (active by default) -->
+                    <!-- <li data-bs-target="#home-page-carousel" data-bs-slide-to="1"></li>   Second dot -->
+                <!-- </ul> -->
+            </div>
+        
+            <hr class="m-1">
+            <div class="d-flex column justify-content-center gap-5">
+                <a href="#documentation" data-target="documentation">Documentation</a>
+                <a href="#installation" data-target="installation">Installation</a>
+                <a href="#code-samples" data-target="code-samples">Code Samples</a>
+                <a href="#license" data-target="license">License</a>
+            </div>
+            <hr>
+            <div>
+                <div class="row" id="table-of-contents-home-page">
+                    <div class="col-3" id="table-of-contents-left-column">
+                        <div class="row">
                             <div>
-                                <h3 class="text-center">About</h3>
+                                <h3>Table of Contents</h3>
                             </div>
-                            <div>
-                                <ul>
-                                    <li>This module provides a utility function to evaluate the strength of a given password and offers suggestions for improvement.</li>
-                                    <li>Anyone with the desire to include password checks for their registered users can use it.</li>
-                                    <li> Its simple, <strong> free </strong> and also occupies <strong> less </strong> memory.</li>
-                                </ul>    
-                            </div>
+                            <div id="table-of-contents-documentation-list" class="table-of-contents-sticky list-group">
+                                <a class="list-group-item list-group-item-action ps-0 active text-500 table-of-contents-home-page-links" href="#about" data-target="about" id="about-link"><h6>About</h6></a>
+                                <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#features" data-target="features" id="features-link"><h6>Features</h6></a>
+                                <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#api-reference" data-target="api-reference" id="api-reference-link"><h6>API Reference</h6></a>
+                                <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#contributing" data-target="contributing" id="contributing-link"><h6>Contributing</h6></a>
+                                <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#dependencies" data-target="dependencies" id="dependencies-link"><h6>Dependencies</h6></a>
+                                <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#download" data-target="download" id="download-link"><h6>Download</h6></a>
+                                <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#installation-code" data-target="installation-code" id="installation-code-link"><h6>Installation Code</h6></a>
+                	            <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href=“#code-samples" data-target=“code-samples" id="code-samples-link"><h6>Code Samples</h6></a>
+ 	    	                    <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href=“#license" data-target=“license" id="license-link"><h6>License</h6></a>
+                            </div> 
                         </div>
-                    </section>
-                    <section id="features" class="d-none">
-                        <div class="row justify-content-center">
-                            <div>
-                                <h3 class="text-center">Features</h3>
-                            </div>
-                            <div>
-                                <p class=" fs-5  fw-light">
+                    </div>
+                    <div class="col-8" id="table-of-contents-right-column">
+                        <section id="about" class="">
+                            <div class="row justify-content-center">
+                                <div>
+                                    <h3 class="text-center">About</h3>
+                                </div>
+                                <div>
                                     <ul>
-                                        <li>  Checks if the password meets the following criteria: </li>
-                                            <ul>
-                                                <li>Minimum length of 8 characters</li>
-                                                <li>Contains at least one uppercase letter</li>
-                                                <li>Contains at least one lowercase letter</li>
-                                                <li>Contains at least one digit</li>
-                                                <li>Contains at least one special character</li>
-                                            </ul>
-                                        <li>  Returns a strength level and boolean validity.</li>
-                                        <li>  Provides suggestions for improvement when the password does not meet specific criteria.</li>
-                                    </ul>
-                                </p>    
+                                        <li>This module provides a utility function to evaluate the strength of a given password and offers suggestions for improvement.</li>
+                                        <li>Anyone with the desire to include password checks for their registered users can use it.</li>
+                                        <li> Its simple, <strong> free </strong> and also occupies <strong> less </strong> memory.</li>
+                                    </ul>    
+                                </div>
                             </div>
-                        </div>
-                    </section>
-                     <section id="api-reference" class="d-none">
-                        <div class="row justify-content-center">
-                            <div>
-                                <h3 class="text-center">API Reference</h3>
-                            </div>
-                            <div>
-                                <p class=" fs-5  fw-light">
-                                    
-                                    <ul>
-                                        <li><h5>Function:</h5> checkStrength(password)</li>
-                                        <li><h5>Parameters:</h5>
+                        </section>
+                        <section id="features" class="d-none">
+                            <div class="row justify-content-center">
+                                <div>
+                                    <h3 class="text-center">Features</h3>
+                                </div>
+                                <div>
+                                    <p class=" fs-5  fw-light">
                                         <ul>
-                                            <li><h6>password (string):</h6> The password to evaluate.</li>
-                                            <li><h6>case-sensitive (boolean):</h6> The value which describes if password's language is case sensitive or not </li>
+                                            <li>  Checks if the password meets the following criteria: </li>
+                                                <ul>
+                                                    <li>Minimum length of 8 characters</li>
+                                                    <li>Contains at least one uppercase letter</li>
+                                                    <li>Contains at least one lowercase letter</li>
+                                                    <li>Contains at least one digit</li>
+                                                    <li>Contains at least one special character</li>
+                                                </ul>
+                                            <li>  Returns a strength level and boolean validity.</li>
+                                            <li>  Provides suggestions for improvement when the password does not meet specific criteria.</li>
                                         </ul>
-                                
-                                        </li>
-                                        <li><h5>Returns:</h5><h6>An object containing:</h6></li>
-                                        <li> <h6>booleanValue (boolean):</h6> Whether the password meets all criteria.
+                                    </p>    
+                                </div>
+                            </div>
+                        </section>
+                         <section id="api-reference" class="d-none">
+                            <div class="row justify-content-center">
+                                <div>
+                                    <h3 class="text-center">API Reference</h3>
+                                </div>
+                                <div>
+                                    <p class=" fs-5  fw-light">
+
+                                        <ul>
+                                            <li><h5>Function:</h5> checkStrength(password)</li>
+                                            <li><h5>Parameters:</h5>
                                             <ul>
-                                                <li>true - Password meets all criteria</li>
-                                                <li>false - Password does not meet one or more criteria</li>
+                                                <li><h6>password (string):</h6> The password to evaluate.</li>
+                                                <li><h6>case-sensitive (boolean):</h6> The value which describes if password's language is case sensitive or not </li>
                                             </ul>
-                                        </li>
-                                        <li><h5>strength (number):</h5> <h6>Password strength level:</h6>
+                                        
+                                            </li>
+                                            <li><h5>Returns:</h5><h6>An object containing:</h6></li>
+                                            <li> <h6>booleanValue (boolean):</h6> Whether the password meets all criteria.
+                                                <ul>
+                                                    <li>true - Password meets all criteria</li>
+                                                    <li>false - Password does not meet one or more criteria</li>
+                                                </ul>
+                                            </li>
+                                            <li><h5>strength (number):</h5> <h6>Password strength level:</h6>
+                                                <ul>
+                                                    <li>0 - Weak</li>
+                                                    <li>1 - Moderate</li>
+                                                    <li> 2 - Strong</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <h5>suggestions (array):</h5>  Suggestions for improving the password.
+                                            </li>
+                                        
+                                            <li>
+                                                <h5> Dependencies:</h5> 
+                                                <h6>
+                                                    password_suggestions:
+                                                </h6>
+                                                An external module that provides suggestions for password improvements. Ensure the module exports properties like:
+                                                <ul>
+                                                    <li>lengthCheck</li>
+                                                    <li>capitalLetterCheck</li>
+                                                    <li>smallLetterCheck</li>
+                                                    <li>digitCheck</li>
+                                                    <li>specialCharacterCheck</li>
+                                                </ul>
+                                            </li>
+                                        </ul>  
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="contributing" class="d-none">
+                            <div class="row justify-content-center">
+                                <h3 class="text-center">Contributing</h3>
+                                <div class="mt-5">
+                                    Feel free to fork the repository from GitHub using the link <a href="www.github/.com/Neha-Himesh">www.github.com/Neha-Himesh</a>, make your changes, and submit a pull request.
+                                </div>
+                            </div>
+                        </section>
+                        <section id="dependencies" class="d-none">
+                            <div class="row justify-content-center">
+                                <div>
+                                    <h3 class="text-center">Dependencies</h3>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li> Node.js (Environment)</li>
                                             <ul>
-                                                <li>0 - Weak</li>
-                                                <li>1 - Moderate</li>
-                                                <li> 2 - Strong</li>
+                                                <li>
+                                                    Version: 
+                                                    <ul>
+                                                        <li>
+                                                            Ensure you have a recent version of Node.js installed, ideally Node.js 14.x or above, as it includes important improvements and features for handling asynchronous operations, modules, etc.
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    Installation:
+                                                    <ul>
+                                                        <li>
+                                                            Visit the Node.js website to download and install the latest stable version.
+                                                        </li>
+                                                        <li>
+                                                            Alternatively, you can use a version manager like nvm (Node Version Manager) to install and manage multiple versions of Node.js on your machine.
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    npm (Package Manager):
+                                                    <ul>
+                                                        <li>
+                                                            Version:
+                                                            <ul>
+                                                                <li>
+                                                                    Along with Node.js, npm (Node Package Manager) will be installed automatically. Make sure it’s updated to the latest version to handle dependencies smoothly.
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            Installation:
+                                                            <ul>
+                                                                <li>
+                                                                   After installing Node.js, npm will be available. You can update npm using the below command in bash:
+                                                                        <ul>
+                                                                            <li>
+                                                                                npm install -g npm
+                                                                            </li>
+                                                                        </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
                                             </ul>
+                                        </li>    
+                                    </ul>    
+                                </div>
+                            </div>
+                        </section>
+                        <section id="download" class="d-none">
+                            <div class="row justify-content-center">
+                                <div class="mb-3">
+                                    <h3 class="text-center">Download</h3>
+                                </div>
+                                <div class="mb-3">
+                                    <h5 class="text-center">Download the package from below button</h5>
+                                </div>
+                                <div class="text-center mt-5">
+                                    <a href="" class="btn btn-primary">Download</a>
+                                </div>
+                            </div>
+                        </section>   
+
+                        <section id="installation-code" class="d-none">
+                            <div class="row justify-content-center">
+                                <div>
+                                    <h3 class="text-center mb-5">Installation Code</h3>
+                                </div>
+                                <div class="text-center">
+                                    <h5 class="mb-5">Install the package using the below code:</h5>
+
+                                    <p class="">
+                                        npm i password-strength-package
+                                    </p>
+                                </div>
+                            </div>
+                        </section>  
+                        <section id="usage" class="d-none">
+                            <div class="row justify-content-center">
+                                <h3 class="text-center">Usage</h3>
+                                <div class="fs-6">
+                                    <ul>
+                                        <li>
+                                            Import the checkStrength function into your project:
+                                            <p>
+                                                const checkStrength = require('./checkStrength');
+                                            </p>
                                         </li>
                                         <li>
-                                            <h5>suggestions (array):</h5>  Suggestions for improving the password.
+                                            Call the function with a password string:
+                                            <p>
+                                                const result = checkStrength('MySecureP@ss24');
+                                                console.log(result);
+                                            </p>
                                         </li>
+                                        <li>
+                                            Output Example:
+                                            <p>
+                                                <ul class="usage-list">
+                                                    <li>
+                                                        json
+                                                    </li>
+                                                    <li>
+                                                        { 
+                                                            <ul>
+                                                                <li>
+                                                                    "booleanValue": true,
+                                                                </li>
+                                                                <li>
+                                                                    "strength": 2,
+                                                                </li>
+                                                                <li>
+                                                                    "suggestions": []
+                                                                </li>
+                                                            </ul>    
+                                                    </li>
+                                                    <li>
+                                                        }
+                                                    </li>
+
+                                                </ul>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="code-samples" class="d-none">
+                            <div class="row justify-content-center">
+                                <h3 class="text-center">Code Samples</h3>
+                                <div class="fs-6">
                                     
-                                        <li>
-                                            <h5> Dependencies:</h5> 
-                                            <h6>
-                                                password_suggestions:
-                                            </h6>
-                                            An external module that provides suggestions for password improvements. Ensure the module exports properties like:
-                                            <ul>
-                                                <li>lengthCheck</li>
-                                                <li>capitalLetterCheck</li>
-                                                <li>smallLetterCheck</li>
-                                                <li>digitCheck</li>
-                                                <li>specialCharacterCheck</li>
-                                            </ul>
-                                        </li>
-                                    </ul>  
-                                </p>
+                                </div>
                             </div>
-                        </div>
-                    </section>
-                    <section id="contributing" class="d-none">
-                        <div class="row justify-content-center">
-                            <h3 class="text-center">Contributing</h3>
-                            <div class="fs-6">
-                                Feel free to fork the repository from GitHub using the link <a href="www.github/.com/Neha-Himesh">www.github.com/Neha-Himesh</a>, make your changes, and submit a pull request.
+                        </section>
+
+                        <section id="license" class="d-none">
+                            <div class="row justify-content-center">
+                                <h3 class="text-center">Code Samples</h3>
+                                <div class="fs-6">
+                                    
+                                </div>
                             </div>
-                        </div>
-                    </section>
-                    <section id="code-samples" class="d-none">
-                        <div class="row justify-content-center">
-                            <h3 class="text-center">Code-Samples</h3>
-                            <div class="fs-6">
-                                Feel free to fork the repository from GitHub using the link <a href="www.github/.com/Neha-Himesh">www.github.com/Neha-Himesh</a>, make your changes, and submit a pull request.
-                            </div>
-                        </div>
-                    </section>
+                        </section>
+                    </div>
                 </div>
             </div>
-            
-        </div>
-    </div>
-    
+        </div> 
     </body>
 </html>    
