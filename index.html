@@ -38,6 +38,11 @@
     <body>
     <div class="container">
         <div class="carousel slide" data-bs-ride="carousel" id="home-page-carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#home-page-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#home-page-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#home-page-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
             <div class="carousel-inner">
                 <div class="p-3 carousel-item active" id="password-strength-top-box">
                     <h1 class="text-center p-3 m-3">
@@ -50,7 +55,7 @@
                         A powerful Node.js package to assess password strength in multiple languages and character sets
                     </h3>
                     <div class="text-center p-3">
-                        <a class="btn btn-primary m-3" href="#" data-bs-target="home-page-carousel" data-bs-slide-to="1"> Try it</a>
+                        <a class="btn btn-primary m-3" href="" data-bs-target="password-strength-form" data-bs-slide-to="1"> Try it</a>
                         <a class="btn btn-primary" href=""> Download it</a>
                     </div>
                 </div>
@@ -100,18 +105,18 @@
                         
                     </div>
                     <div class="text-center p-3">
-                        <a class="btn btn-primary m-3" href="#" data-bs-target="home-page-carousel" data-bs-slide-to="1">Try another Password</a>
+                        <a class="btn btn-primary m-3" href="" data-bs-target="password-strength-form" data-bs-slide-to="1">Try another Password</a>
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#home-page-carousel" role="button" data-bs-slide="prev" aria-label="Previous">
-                <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+            <button class="carousel-control-prev" href="#home-page-carousel" role="button" data-bs-slide="prev" aria-label="Previous">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden"> &lt; Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#home-page-carousel" role="button" data-bs-slide="next" aria-label="Next">
-                <span class="carousel-control-next-icon" aria-hidden="false"> </span>
+            </button>
+            <button class="carousel-control-next" href="#home-page-carousel" role="button" data-bs-slide="next" aria-label="Next">
+                <span class="carousel-control-next-icon" aria-hidden="true"> </span>
                 <span class="visually-hidden">  Next &gt;</span>
-            </a>
+            </button>
             <!-- {{!-- <ul class="carousel-indicators">
                 <li data-bs-target="#home-page-carousel" data-bs-slide-to="0" class="active"></li>  First dot (active by default) -->
                 <!-- <li data-bs-target="#home-page-carousel" data-bs-slide-to="1"></li>   Second dot -->
