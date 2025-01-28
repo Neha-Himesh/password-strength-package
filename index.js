@@ -31,7 +31,7 @@ function checkStrength(password, caseSensitive, minLength, maxLength){
     // regular expression to check existence of space/puntuation/special character/emoji
     const regexSplCharacters = /[\s\p{P}\p{S}\p{So}]/gu;
 
-    const passwordSuggestions = passwordSuggestionsUsingLengthsVariables(minLength, maxLength);
+    const passwordSuggestions = passwordSuggestions(minLength, maxLength);
     //Checking if length has minimum and maximum characters length based on user's choice
     if ((regex).test(password)){
         passwordStrengthCount ++;
