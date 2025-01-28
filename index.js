@@ -1,5 +1,3 @@
-// import checkStrength from './check_strength.js';
-
 function updateStrength() {
     console.log("Password check");
     event.preventDefault(); // Prevent form from reloading the page
@@ -152,5 +150,3 @@ document.addEventListener('DOMContentLoaded', () => {
 //         }
 //     });
 });
-
-// export default updateStrength;
