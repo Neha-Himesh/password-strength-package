@@ -138,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Adding 'd-none' class to the previous target element and removing 'd-none' from the required target ID (sub-menu)
             if (elementHavingPreviousTargetId) {
                 elementHavingPreviousTargetId.classList.add('d-none');
+                console.log(tableOfContentsHighlightedSection);
                 tableOfContentsHighlightedSection.classList.remove('active');
             }
             // Assigning the required target ID to the previous target ID to save the data for the next hover
