@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(tableOfContentsMainSection.classList.contains('d-none')){
         tableOfContentsMainSection.classList.remove('d-none');
     }
-    const tableOfContentsDocumentationSections = document.querySelectorAll('.table-of-contents-home-page-documentation[data-target]');
+    const tableOfContentsSections = document.querySelectorAll('.table-of-contents-home-page-links[data-target]');
     // Fetching main menu of the dropdown
     const tableOfContentsDocumentationList = document.getElementById('table-of-contents-documentation-list');
  
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let elementHavingPreviousTargetId = tableOfContentsMainSection;
 
     // On mouse enter event, fetching the target data of the sub-menu element and finding the element with the matching target ID
-    tableOfContentsDocumentationSections.forEach(option => {
+    tableOfContentsSections.forEach(option => {
         option.addEventListener('click', function () {
             const targetIdOfSubSection = this.dataset.target;
             const elementWithRequiredTargetId = document.getElementById(targetIdOfSubSection);
