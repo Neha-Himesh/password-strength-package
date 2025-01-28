@@ -1,4 +1,4 @@
-var passwordSuggestionsUsingLengthsVariables = require('./password_suggestions');
+import passwordSuggestionsUsingLengthsVariables from './password_suggestions.js';
 
 function checkStrength(password, caseSensitive, minLength, maxLength){
    
@@ -81,4 +81,4 @@ function checkStrength(password, caseSensitive, minLength, maxLength){
     return passwordReview;
 }
 
-module.exports = checkStrength;
+export default checkStrength;

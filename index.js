@@ -1,6 +1,4 @@
-
-var passwordSuggestionsUsingLengthsVariables = require('./password_suggestions');
-const checkStrength = require("./index");
+import checkStrength from './check_strength.js';
 
 function updateStrength() {
     console.log("Password check");
@@ -20,4 +18,5 @@ function updateStrength() {
 
     document.getElementById("strength").innerHTML = strengthText;
 }
-module.exports = updateStrength;
+
+export default updateStrength;

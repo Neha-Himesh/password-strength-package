@@ -7,4 +7,4 @@ passwordSuggestions = (minLength, maxLength) => ({
     letterCheck: "Password should contain atleast 1 letter",
 });
 
-module.exports = passwordSuggestions;
+export default passwordSuggestions;

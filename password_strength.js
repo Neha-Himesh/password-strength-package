@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 // Import the password strength logic from index.js
-const checkStrength = require('./index');
+import checkStrength from './check_strength.js';
 
 // Get the password from CLI arguments
 const args = process.argv.slice(2);
