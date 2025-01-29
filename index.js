@@ -24,6 +24,7 @@ function updateStrength(event) {
     }
 
     document.getElementById("strength").innerHTML = strengthText;
+    document.getElementById('home-page-carousel').carousel(2);
 }
 
 function checkStrength(password, caseSensitive, minLength, maxLength){
