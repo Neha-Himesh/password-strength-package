@@ -167,8 +167,9 @@
                                     <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#dependencies" data-target="dependencies" id="dependencies-link"><h6>Dependencies</h6></a>
                                     <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#download" data-target="download" id="download-link"><h6>Download</h6></a>
                                     <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#installation-code" data-target="installation-code" id="installation-code-link"><h6>Installation Code</h6></a>
-                	                <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href=“#code-samples" data-target=“code-samples" id="code-samples-link"><h6>Code Samples</h6></a>
- 	    	                        <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href=“#license" data-target=“license" id="license-link"><h6>License</h6></a>
+                	                <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href=“#code-samples" data-target=“code-samples" id="code-samples-link"><h6>Code Samples</h6></a>   
+                                    <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href=“#usage" data-target=“usage" id="usage-link"><h6>Usage</h6></a>
+                                    <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href=“#license" data-target=“license" id="license-link"><h6>License</h6></a>
                                 </div> 
                             </div>
                         </div>
@@ -179,7 +180,7 @@
                                 <div>
                                     <h3 class="text-center">About</h3>
                                 </div>
-                                <div>
+                                <div class="mt-3">
                                     <ul>
                                         <li>This module provides a utility function to evaluate the strength of a given password and offers suggestions for improvement.</li>
                                         <li>Anyone with the desire to include password checks for their registered users can use it.</li>
@@ -194,7 +195,7 @@
                                     <h3 class="text-center">Features</h3>
                                 </div>
                                 <div>
-                                    <p class=" fs-5  fw-light">
+                                    <p class="mt-3">
                                         <ul>
                                             <li>  Checks if the password meets the following criteria: </li>
                                                 <ul>
@@ -217,7 +218,7 @@
                                     <h3 class="text-center">API Reference</h3>
                                 </div>
                                 <div>
-                                    <p class=" fs-5  fw-light">
+                                    <p class="mt-3">
 
                                         <ul>
                                             <li><h5>Function:</h5> checkStrength(password)</li>
@@ -278,7 +279,7 @@
                                 <div>
                                     <h3 class="text-center">Dependencies</h3>
                                 </div>
-                                <div>
+                                <div class="mt-3">
                                     <ul>
                                         <li> Node.js (Environment)</li>
                                             <ul>
@@ -364,7 +365,7 @@
                         <section id="usage" class="d-none">
                             <div class="row justify-content-center">
                                 <h3 class="text-center">Usage</h3>
-                                <div class="fs-6">
+                                <div class="mt-3">
                                     <ul>
                                         <li>
                                             Import the checkStrength function into your project:
@@ -415,17 +416,135 @@
                         <section id="code-samples" class="d-none">
                             <div class="row justify-content-center">
                                 <h3 class="text-center">Code Samples</h3>
-                                <div class="fs-6">
-                                    
+                                <div class="mt-3">
+                                    <h5>Following are the code samples for different type of passwords:</h5>
+                                    <ul>
+                                        <li>
+                                            Password strength: 0
+                                            <ul>
+                                                <li>
+                                                    This type of strength is displayed when none of the characteristics are met or only 1 or 2 characteristics are met.
+                                                </li>
+                                                <li>
+                                                    Note: If language is case sensitive then both capital and small letters check is included. Else only small letter check is included among the two
+                                                </li>
+                                                <li>
+                                                    Example: abcd
+                                                </li>
+                                                <li>
+                                                    Code sample:
+                                                    <ul style="list-style: none">
+                                                        <li>
+                                                            const result = checkStrength('abcd');
+                                                        </li>
+                                                        <li> 
+                                                            console.log(result);
+                                                        </li>
+                                                        <li>
+                                                            Output:
+                                                            <ul>
+                                                                <li>
+                                                                    Strength: 0
+                                                                </li>
+                                                                <li>
+                                                                    Password should contain minimum of 8, and maximum of 15 characters 
+                                                                </li>   
+                                                                <li>
+                                                                    Password should contain atleast 1 capital letter
+                                                                </li>
+                                                                <li>
+                                                                    Password should contain atleast 1 digit
+                                                                </li>
+                                                                <li>
+                                                                    Password should contain atleast 1 special character, space or an emoji
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Password strength: 1
+                                            <ul>
+                                                <li>
+                                                    This type of strength is displayed when 3 characteristics are met.
+                                                </li>
+                                                <li>
+                                                    Note: If language is case sensitive then both capital and small letters check is included. Else only small letter check is included among the two
+                                                </li>
+                                                <li>
+                                                    Example: abPQ123
+                                                </li>
+                                                <li>
+                                                    Code sample:
+                                                    <ul style="list-style: none">
+                                                        <li>
+                                                            const result = checkStrength('abPQ123');
+                                                        </li>
+                                                        <li> 
+                                                            console.log(result);
+                                                        </li>
+                                                        <li>
+                                                            Output:
+                                                            <ul>
+                                                                <li>
+                                                                    Strength: 1
+                                                                </li>
+                                                                <li>
+                                                                    Password should contain minimum of 8, and maximum of 15 characters 
+                                                                </li>   
+                                                                <li>
+                                                                    Password should contain atleast 1 special character, space or an emoji
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Password strength: 2
+                                            <ul>
+                                                <li>
+                                                    This type of strength is displayed when all characteristics are met.
+                                                </li>
+                                                <li>
+                                                    Note: If language is case sensitive then both capital and small letters check is included. Else only small letter check is included among the two
+                                                </li>
+                                                <li>
+                                                    Example: abPQ123#$
+                                                </li>
+                                                <li>
+                                                    Code sample:
+                                                    <ul style="list-style: none">
+                                                        <li>
+                                                            const result = checkStrength('abPQ123#$');
+                                                        </li>
+                                                        <li> 
+                                                            console.log(result);
+                                                        </li>
+                                                        <li>
+                                                            Output:
+                                                            <ul>
+                                                                Strength: 2
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </div>
+
                             </div>
                         </section>
 
                         <section id="license" class="d-none">
                             <div class="row justify-content-center">
-                                <h3 class="text-center">Code Samples</h3>
-                                <div class="fs-6">
-                                    
+                                <h3 class="text-center">License</h3>
+                                <div class="mt-3">
+                                    This project is licensed under the MIT License.
                                 </div>
                             </div>
                         </section>
