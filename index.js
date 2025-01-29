@@ -137,6 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetIdOfSubSection = this.dataset.target;
             const elementWithRequiredTargetId = document.getElementById(targetIdOfSubSection);
             var tableOfContentsToBeHighlightedSection = document.getElementById(`${targetIdOfSubSection}-link`);
+            console.log(tableOfContentsToBeHighlightedSection);
             // Adding 'd-none' class to the previous target element and removing 'd-none' from the required target ID (sub-menu)
             if (elementHavingPreviousTargetId) {
                 elementHavingPreviousTargetId.classList.add('d-none');
