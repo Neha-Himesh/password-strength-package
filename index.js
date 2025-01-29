@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
    
 
-    const tableOfContentsSections = document.querySelectorAll('.table-of-contents-home-page-links[data-target]');
+    const tableOfContentsSectionsOrCenterPageLinks = document.querySelectorAll('.table-of-contents-home-page-links[data-target], .center-page-links');
     // Fetching main menu of the dropdown
     const tableOfContentsDocumentationList = document.getElementById('table-of-contents-documentation-list');
  
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let elementHavingPreviousTargetId = tableOfContentsMainSection;
 
     // On mouse enter event, fetching the target data of the sub-menu element and finding the element with the matching target ID
-    tableOfContentsSections.forEach(option => {
+    tableOfContentsSectionsOrCenterPageLinks.forEach(option => {
         option.addEventListener('click', function () {
             const targetIdOfSubSection = this.dataset.target;
             const elementWithRequiredTargetId = document.getElementById(targetIdOfSubSection);
