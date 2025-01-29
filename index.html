@@ -36,6 +36,21 @@
                     list-style: none;
                 }
             }
+            #table-of-contents-left-column{
+                position: sticky;
+                z-index: 1;
+                top: 0;
+            }
+            #installation-code{
+                div{
+                    div{
+                        p{
+                            background-color: lightgray;
+                            margin: 0 20%;
+                        }
+                    }
+                }
+            }
             
 
         </style>
@@ -130,30 +145,32 @@
         
             <hr class="m-1">
             <div class="d-flex column justify-content-center gap-5">
-                <a href="#documentation" data-target="documentation">Documentation</a>
-                <a href="#installation" data-target="installation">Installation</a>
+                <a href="#documentation" data-target="about">Documentation</a>
+                <a href="#installation" data-target="installation-code">Installation</a>
                 <a href="#code-samples" data-target="code-samples">Code Samples</a>
                 <a href="#license" data-target="license">License</a>
             </div>
             <hr>
             <div>
                 <div class="row" id="table-of-contents-home-page">
-                    <div class="col-3" id="table-of-contents-left-column">
-                        <div class="row">
-                            <div>
-                                <h3>Table of Contents</h3>
+                    <div>
+                        <div class="col-3" id="table-of-contents-left-column">
+                            <div class="row">
+                                <div>
+                                    <h3>Table of Contents</h3>
+                                </div>
+                                <div id="table-of-contents-documentation-list" class="table-of-contents-sticky list-group">
+                                    <a class="list-group-item list-group-item-action ps-0 active text-500 table-of-contents-home-page-links" href="#about" data-target="about" id="about-link"><h6>About</h6></a>
+                                    <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#features" data-target="features" id="features-link"><h6>Features</h6></a>
+                                    <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#api-reference" data-target="api-reference" id="api-reference-link"><h6>API Reference</h6></a>
+                                    <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#contributing" data-target="contributing" id="contributing-link"><h6>Contributing</h6></a>
+                                    <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#dependencies" data-target="dependencies" id="dependencies-link"><h6>Dependencies</h6></a>
+                                    <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#download" data-target="download" id="download-link"><h6>Download</h6></a>
+                                    <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#installation-code" data-target="installation-code" id="installation-code-link"><h6>Installation Code</h6></a>
+                	                <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href=“#code-samples" data-target=“code-samples" id="code-samples-link"><h6>Code Samples</h6></a>
+ 	    	                        <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href=“#license" data-target=“license" id="license-link"><h6>License</h6></a>
+                                </div> 
                             </div>
-                            <div id="table-of-contents-documentation-list" class="table-of-contents-sticky list-group">
-                                <a class="list-group-item list-group-item-action ps-0 active text-500 table-of-contents-home-page-links" href="#about" data-target="about" id="about-link"><h6>About</h6></a>
-                                <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#features" data-target="features" id="features-link"><h6>Features</h6></a>
-                                <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#api-reference" data-target="api-reference" id="api-reference-link"><h6>API Reference</h6></a>
-                                <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#contributing" data-target="contributing" id="contributing-link"><h6>Contributing</h6></a>
-                                <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#dependencies" data-target="dependencies" id="dependencies-link"><h6>Dependencies</h6></a>
-                                <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#download" data-target="download" id="download-link"><h6>Download</h6></a>
-                                <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href="#installation-code" data-target="installation-code" id="installation-code-link"><h6>Installation Code</h6></a>
-                	            <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href=“#code-samples" data-target=“code-samples" id="code-samples-link"><h6>Code Samples</h6></a>
- 	    	                    <a class="list-group-item list-group-item-action ps-0 table-of-contents-home-page-links" href=“#license" data-target=“license" id="license-link"><h6>License</h6></a>
-                            </div> 
                         </div>
                     </div>
                     <div class="col-8" id="table-of-contents-right-column">
